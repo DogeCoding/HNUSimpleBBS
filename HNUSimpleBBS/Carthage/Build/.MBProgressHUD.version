@@ -1,0 +1,10 @@
+{
+  "xcodeVersion" : "Xcode 9.2\nBuild version 9C40b",
+  "commitish" : "1.1.0",
+  "iOS" : [
+    {
+      "hash" : "85c05b906010aa6016686e96263080a41c5e487e1838bfc9ca1129ef706f3269",
+      "name" : "MBProgressHUD"
+    }
+  ]
+}

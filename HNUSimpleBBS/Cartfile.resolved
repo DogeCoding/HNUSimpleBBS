@@ -1,0 +1,7 @@
+github "Alamofire/Alamofire" "4.7.1"
+github "Hearst-DD/ObjectMapper" "3.1.0"
+github "SwiftyJSON/SwiftyJSON" "4.0.0"
+github "hackiftekhar/IQKeyboardManager" "v5.0.8"
+github "jdg/MBProgressHUD" "1.1.0"
+github "onevcat/Kingfisher" "4.7.0"
+github "slazyk/Observable-Swift" "v0.7.0"

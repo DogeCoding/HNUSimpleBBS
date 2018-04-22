@@ -1,0 +1,10 @@
+{
+  "xcodeVersion" : "Xcode 9.2\nBuild version 9C40b",
+  "commitish" : "3.1.0",
+  "iOS" : [
+    {
+      "hash" : "491e791f9378be2edea6bf36482d5c398b42216142da645b5b9644d75af75292",
+      "name" : "ObjectMapper"
+    }
+  ]
+}

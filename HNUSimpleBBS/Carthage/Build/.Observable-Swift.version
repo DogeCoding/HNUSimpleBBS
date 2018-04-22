@@ -1,0 +1,10 @@
+{
+  "xcodeVersion" : "Xcode 9.2\nBuild version 9C40b",
+  "commitish" : "v0.7.0",
+  "iOS" : [
+    {
+      "hash" : "652990c878296a012229a63e82bb3466dbccc78ba63780ba7a07c21de516e088",
+      "name" : "Observable"
+    }
+  ]
+}
