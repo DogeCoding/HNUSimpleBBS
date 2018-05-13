@@ -1,0 +1,8 @@
+github "hackiftekhar/IQKeyboardManager"
+github "jdg/MBProgressHUD" ~> 1.1.0
+github "Alamofire/Alamofire" ~> 4.7
+github "Hearst-DD/ObjectMapper"
+github "onevcat/Kingfisher" ~> 4.0
+github "SwiftyJSON/SwiftyJSON"
+github "slazyk/Observable-Swift"
+github "texturegroup/texture"
