@@ -1,0 +1,10 @@
+{
+  "xcodeVersion" : "Xcode 9.2\nBuild version 9C40b",
+  "commitish" : "4.0.0",
+  "iOS" : [
+    {
+      "hash" : "eb2686bcbebe33f0e90a94fba4993e0e0d43f4c6d6380b478c57c6f0671e9aad",
+      "name" : "SnapKit"
+    }
+  ]
+}

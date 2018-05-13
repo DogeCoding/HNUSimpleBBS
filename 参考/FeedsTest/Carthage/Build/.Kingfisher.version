@@ -1,0 +1,10 @@
+{
+  "xcodeVersion" : "Xcode 9.2\nBuild version 9C40b",
+  "commitish" : "4.6.1",
+  "iOS" : [
+    {
+      "hash" : "fcbe36cf2f2d39892520670dda9e15713690251c7f23c1b5d392cae2a59e8551",
+      "name" : "Kingfisher"
+    }
+  ]
+}

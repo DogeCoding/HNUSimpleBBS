@@ -1,0 +1,11 @@
+platform :ios, '11.2'
+
+inhibit_all_warnings!
+target 'FeedsTest' do
+pod 'MJRefresh', '~> 3.1.12'
+pod 'YYCache', '~> 1.0.4'
+pod 'YYImage', '~> 1.0.4'
+pod 'YYWebImage', '~> 1.0.5'
+pod 'pop', '~> 1.0.9'
+pod 'KVOController', '~> 1.2.0'
+end

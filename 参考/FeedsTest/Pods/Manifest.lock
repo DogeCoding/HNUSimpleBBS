@@ -1,0 +1,31 @@
+PODS:
+  - KVOController (1.2.0)
+  - MJRefresh (3.1.12)
+  - pop (1.0.9)
+  - YYCache (1.0.4)
+  - YYImage (1.0.4):
+    - YYImage/Core (= 1.0.4)
+  - YYImage/Core (1.0.4)
+  - YYWebImage (1.0.5):
+    - YYCache
+    - YYImage
+
+DEPENDENCIES:
+  - KVOController (~> 1.2.0)
+  - MJRefresh (~> 3.1.12)
+  - pop (~> 1.0.9)
+  - YYCache (~> 1.0.4)
+  - YYImage (~> 1.0.4)
+  - YYWebImage (~> 1.0.5)
+
+SPEC CHECKSUMS:
+  KVOController: d72ace34afea42468329623b3379ab3cd1d286b6
+  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
+  YYCache: 8105b6638f5e849296c71f331ff83891a4942952
+  YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
+  YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
+
+PODFILE CHECKSUM: d910d021f2bb8743e8a4afb5702f3484f6d046dd
+
+COCOAPODS: 1.3.1

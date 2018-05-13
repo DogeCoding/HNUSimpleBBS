@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="cYl-MV-K2j" customClass="MilitaryNewsOnePicCell" customModule="FeedsTest" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="626" height="116"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                <rect key="frame" x="0.0" y="0.0" width="626" height="116"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jBQ-aY-8tn">
+                        <rect key="frame" x="10" y="15" width="367" height="85"/>
+                        <attributedString key="attributedText">
+                            <fragment content="Label">
+                                <attributes>
+                                    <font key="NSFont" size="16" name=".AppleSystemUIFont"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="p9k-j6-c6S">
+                        <rect key="frame" x="407" y="15" width="209" height="86"/>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wlJ-pR-cfa" userLabel="Separator">
+                        <rect key="frame" x="10" y="115" width="606" height="1"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="Lxd-Y5-FKk"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="p9k-j6-c6S" firstAttribute="leading" secondItem="jBQ-aY-8tn" secondAttribute="trailing" constant="30" id="5KI-0M-qML"/>
+                <constraint firstItem="p9k-j6-c6S" firstAttribute="top" secondItem="cYl-MV-K2j" secondAttribute="top" constant="15" id="Phj-mV-baF"/>
+                <constraint firstItem="jBQ-aY-8tn" firstAttribute="top" secondItem="cYl-MV-K2j" secondAttribute="top" constant="15" id="Qxd-IS-CA7"/>
+                <constraint firstItem="p9k-j6-c6S" firstAttribute="leading" secondItem="cYl-MV-K2j" secondAttribute="trailing" multiplier="0.65" id="ZLL-Qt-IrS"/>
+                <constraint firstItem="jBQ-aY-8tn" firstAttribute="leading" secondItem="cYl-MV-K2j" secondAttribute="leading" constant="10" id="aVD-ED-mLC"/>
+                <constraint firstAttribute="trailing" secondItem="wlJ-pR-cfa" secondAttribute="trailing" constant="10" id="emW-C5-1uk"/>
+                <constraint firstAttribute="trailing" secondItem="p9k-j6-c6S" secondAttribute="trailing" constant="10" id="jZN-zI-x0p"/>
+                <constraint firstItem="wlJ-pR-cfa" firstAttribute="leading" secondItem="cYl-MV-K2j" secondAttribute="leading" constant="10" id="l5Z-Jh-Z7y"/>
+                <constraint firstItem="wlJ-pR-cfa" firstAttribute="bottom" secondItem="cYl-MV-K2j" secondAttribute="bottom" id="oJg-sK-18w"/>
+                <constraint firstItem="wlJ-pR-cfa" firstAttribute="top" secondItem="jBQ-aY-8tn" secondAttribute="bottom" constant="15" id="r6p-7R-UZl"/>
+                <constraint firstAttribute="bottom" secondItem="p9k-j6-c6S" secondAttribute="bottom" constant="15" id="zUR-Yw-JhZ"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="v8c-1I-ne3"/>
+            <connections>
+                <outlet property="newsTitleLabel" destination="jBQ-aY-8tn" id="6gI-JL-tAX"/>
+                <outlet property="rightThumbView" destination="p9k-j6-c6S" id="pd7-XF-23X"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+</document>

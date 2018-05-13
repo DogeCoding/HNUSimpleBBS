@@ -1,0 +1,10 @@
+{
+  "xcodeVersion" : "Xcode 9.2\nBuild version 9C40b",
+  "commitish" : "3.1.1",
+  "iOS" : [
+    {
+      "hash" : "9d695241e540b3946af0580ec0e56511de7ae083ea88d057c508d96c9c6feb7a",
+      "name" : "IGListKit"
+    }
+  ]
+}

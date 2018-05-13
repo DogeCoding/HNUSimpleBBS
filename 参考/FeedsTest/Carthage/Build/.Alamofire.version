@@ -1,0 +1,10 @@
+{
+  "xcodeVersion" : "Xcode 9.2\nBuild version 9C40b",
+  "commitish" : "4.6.0",
+  "iOS" : [
+    {
+      "hash" : "ea633885fb7aea6aae6873defcd6e7c8faac96dcb13c145dc2f357fbb1a34a9a",
+      "name" : "Alamofire"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "xcodeVersion" : "Xcode 9.2\nBuild version 9C40b",
+  "commitish" : "2.1.2",
+  "iOS" : [
+    {
+      "hash" : "ab6a523c466a5988730e466d06f13c15f9745f8f678b718679f50fd688c2270a",
+      "name" : "Segmentio"
+    }
+  ]
+}
