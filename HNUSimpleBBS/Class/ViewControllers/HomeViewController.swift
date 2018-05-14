@@ -6,20 +6,7 @@
 //  Copyright © 2018年 CodingDoge. All rights reserved.
 //
 
-import UIKit
-
-class HomeViewController: UIViewController {
+class HomeViewController: BBSViewController {
     
-    override func viewDidLoad() {
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        
-    }
     
 }

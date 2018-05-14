@@ -6,11 +6,6 @@
 //  Copyright © 2018年 CodingDoge. All rights reserved.
 //
 
-import UIKit
+class MessageViewController: BBSViewController {
 
-class MessageViewController: UIViewController {
-    
-    override func viewDidLoad() {
-        
-    }
 }

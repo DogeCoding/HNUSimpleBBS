@@ -6,12 +6,7 @@
 //  Copyright © 2018年 CodingDoge. All rights reserved.
 //
 
-import UIKit
-
-class PersonViewController: UIViewController {
+class PersonViewController: BBSViewController {
     
-    override func viewDidLoad() {
-        
-    }
     
 }
