@@ -10,6 +10,8 @@
 #define PrefixHeader_pch
 
 #import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 #import <AsyncDisplayKit/AsyncDisplayKit.h>
+
 
 #endif /* PrefixHeader_pch */

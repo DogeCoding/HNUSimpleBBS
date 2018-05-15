@@ -7,11 +7,37 @@
 //
 
 extension UIColor {
-    class func bbs_redColorFrom(hexRGBColor color: NSInteger) -> Float {
-        return (Float((color & 0xff0000) >> 16) / 255.0)
+    class func bbs_redColorFrom(hexRGBColor color: NSInteger) -> CGFloat {
+        return (CGFloat((color & 0xff0000) >> 16) / 255.0)
     }
     
-    class func bbs_colorWith(hexValue value: NSInteger, alpha: Float) -> UIColor {
-        return UIColor.init(red: <#T##CGFloat#>, green: <#T##CGFloat#>, blue: <#T##CGFloat#>, alpha: <#T##CGFloat#>)
+    class func bbs_greenColorFrom(hexRGBColor color: NSInteger) -> CGFloat {
+        return (CGFloat((color & 0x00ff00) >> 8) / 255.0)
+    }
+    
+    class func bbs_blueColorFrom(hexRGBColor color: NSInteger) -> CGFloat {
+        return (CGFloat(color & 0x0000ff) / 255.0)
+    }
+    
+    class func bbs_colorWith(hexValue value: NSInteger) -> UIColor {
+        return UIColor.bbs_colorWith(hexValue: value, alpha: 1)
+    }
+    
+    class func bbs_colorWith(hexValue value: NSInteger, alpha: CGFloat) -> UIColor {
+        return UIColor.init(red: UIColor.bbs_redColorFrom(hexRGBColor: value),
+                            green: UIColor.bbs_greenColorFrom(hexRGBColor: value),
+                            blue: UIColor.bbs_blueColorFrom(hexRGBColor: value),
+                            alpha: alpha)
+    }
+    
+    class func bbs_randomColorWith(alpha: CGFloat) -> UIColor {
+        return UIColor.init(hue: CGFloat(arc4random() % 256 / 256),
+                            saturation: CGFloat(arc4random() % 128 / 256) + 0.5,
+                            brightness: CGFloat(arc4random() % 128 / 256) + 0.5,
+                            alpha: alpha)
+    }
+    
+    class func bbs_randomColor() -> UIColor {
+        return UIColor.bbs_randomColorWith(alpha: 1)
     }
 }

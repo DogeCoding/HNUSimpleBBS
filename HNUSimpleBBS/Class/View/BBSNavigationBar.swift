@@ -7,13 +7,15 @@
 //
 
 class BBSNavigationBar: UINavigationBar {
-    var backBtn: ASButtonNode = {
+    var backBtn: ASButtonNode {
         let btn = ASButtonNode.init()
         btn.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
         btn.addTarget(self, action: #selector(handleNaviBack), forControlEvents: .touchUpInside)
-        btn.backgroundColor = 
+        btn.backgroundColor = UIColor.bbs_randomColor()
+        
         return btn
-    }()
+    }
+    
     var barItem: UINavigationItem? = nil
     
     override init(frame: CGRect) {
