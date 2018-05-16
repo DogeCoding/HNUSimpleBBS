@@ -33,6 +33,7 @@
 		DD3C9E7B20A986200097FF4B /* BBSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3C9E7A20A986200097FF4B /* BBSViewController.swift */; };
 		DD3C9E8220A9A40A0097FF4B /* UIColor+BBSHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3C9E8120A9A40A0097FF4B /* UIColor+BBSHelper.swift */; };
 		DDA3D98E20AB0A1A008F5737 /* BBSCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA3D98D20AB0A1A008F5737 /* BBSCommon.swift */; };
+		DDA3D99520AC3B3C008F5737 /* Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA3D99420AC3B3C008F5737 /* Then.swift */; };
 		F1523913E955FA98C540BA0E /* libPods-HNUSimpleBBS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4246BF64B4F650EB68FDE5E9 /* libPods-HNUSimpleBBS.a */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +92,7 @@
 		DD3C9E7E20A992010097FF4B /* HNUSimpleBBS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HNUSimpleBBS-Bridging-Header.h"; sourceTree = "<group>"; };
 		DD3C9E8120A9A40A0097FF4B /* UIColor+BBSHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+BBSHelper.swift"; sourceTree = "<group>"; };
 		DDA3D98D20AB0A1A008F5737 /* BBSCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBSCommon.swift; sourceTree = "<group>"; };
+		DDA3D99420AC3B3C008F5737 /* Then.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Then.swift; sourceTree = "<group>"; };
 		DFBD5D28A3FFA807B2D73B25 /* Pods-HNUSimpleBBS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HNUSimpleBBS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HNUSimpleBBS/Pods-HNUSimpleBBS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -258,6 +260,7 @@
 				DD3C9E7E20A992010097FF4B /* HNUSimpleBBS-Bridging-Header.h */,
 				DD3C9E8120A9A40A0097FF4B /* UIColor+BBSHelper.swift */,
 				DDA3D98D20AB0A1A008F5737 /* BBSCommon.swift */,
+				DDA3D99420AC3B3C008F5737 /* Then.swift */,
 			);
 			name = Utility;
 			path = Ulity;
@@ -492,6 +495,7 @@
 				DD3C9E7B20A986200097FF4B /* BBSViewController.swift in Sources */,
 				DD3C9E8220A9A40A0097FF4B /* UIColor+BBSHelper.swift in Sources */,
 				21D350D82079B81000474072 /* HomeNewsCell.swift in Sources */,
+				DDA3D99520AC3B3C008F5737 /* Then.swift in Sources */,
 				213DF98120AB3E5B006F5C1F /* BBSWindowWithStatusBarUnderlay.swift in Sources */,
 				DDA3D98E20AB0A1A008F5737 /* BBSCommon.swift in Sources */,
 				21D350D42079B7B800474072 /* MessageViewController.swift in Sources */,

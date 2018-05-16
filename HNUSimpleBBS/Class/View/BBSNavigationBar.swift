@@ -7,19 +7,26 @@
 //
 
 class BBSNavigationBar: UINavigationBar {
-    var backBtn: ASButtonNode {
-        let btn = ASButtonNode.init()
-        btn.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
-        btn.addTarget(self, action: #selector(handleNaviBack), forControlEvents: .touchUpInside)
-        btn.backgroundColor = UIColor.bbs_randomColor()
-        
-        return btn
+    var backBtn = ASButtonNode().then {
+        $0.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
+        $0.addTarget(self, action: #selector(handleNaviBack), forControlEvents: .touchUpInside)
+        $0.backgroundColor = UIColor.bbs_randomColor()
+        $0.setImage(UIImage.init(named: ""), for: .normal)
     }
     
-    var barItem: UINavigationItem? = nil
+    
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        var fixedSpace: CGFloat = 0
+        if BBSScreenWidth > 370 {
+            fixedSpace = -20
+        } else {
+            fixedSpace = -16
+        }
+        
     }
     
     required init?(coder aDecoder: NSCoder) {

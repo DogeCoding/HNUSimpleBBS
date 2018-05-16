@@ -12,6 +12,7 @@ import Kingfisher
 public let BBSScreenBounds = UIScreen.main.bounds
 public let BBSScreenWidth = BBSScreenBounds.width
 public let BBSScreenHeight = BBSScreenBounds.height
+public let BBSCurrentSystemVersion: CGFloat = CGFloat(UIDevice.current.systemVersion)
 public let BBSKeyWindow = UIApplication.shared.keyWindow
 
 // MARK: Color
