@@ -8,6 +8,10 @@
 
 class RootViewController: BBSViewController {
     
+    init() {
+        
+    }
+    
     override func viewDidLoad() {
         
     }

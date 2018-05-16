@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		213DF98120AB3E5B006F5C1F /* BBSWindowWithStatusBarUnderlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213DF98020AB3E5B006F5C1F /* BBSWindowWithStatusBarUnderlay.swift */; };
 		21D3508B2078FF3200474072 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D3508A2078FF3200474072 /* AppDelegate.swift */; };
 		21D350902078FF3200474072 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21D3508E2078FF3200474072 /* Main.storyboard */; };
 		21D350922078FF3200474072 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21D350912078FF3200474072 /* Assets.xcassets */; };
@@ -53,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		213DF98020AB3E5B006F5C1F /* BBSWindowWithStatusBarUnderlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBSWindowWithStatusBarUnderlay.swift; sourceTree = "<group>"; };
 		21D350872078FF3200474072 /* HNUSimpleBBS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HNUSimpleBBS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21D3508A2078FF3200474072 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21D3508F2078FF3200474072 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 			children = (
 				21D350D72079B81000474072 /* HomeNewsCell.swift */,
 				DD3C9E7820A97E030097FF4B /* BBSNavigationBar.swift */,
+				213DF98020AB3E5B006F5C1F /* BBSWindowWithStatusBarUnderlay.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -489,6 +492,7 @@
 				DD3C9E7B20A986200097FF4B /* BBSViewController.swift in Sources */,
 				DD3C9E8220A9A40A0097FF4B /* UIColor+BBSHelper.swift in Sources */,
 				21D350D82079B81000474072 /* HomeNewsCell.swift in Sources */,
+				213DF98120AB3E5B006F5C1F /* BBSWindowWithStatusBarUnderlay.swift in Sources */,
 				DDA3D98E20AB0A1A008F5737 /* BBSCommon.swift in Sources */,
 				21D350D42079B7B800474072 /* MessageViewController.swift in Sources */,
 				DD3C9E7920A97E030097FF4B /* BBSNavigationBar.swift in Sources */,
