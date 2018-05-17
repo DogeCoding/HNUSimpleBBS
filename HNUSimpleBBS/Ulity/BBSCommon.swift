@@ -8,10 +8,13 @@
 
 import Kingfisher
 
+// MARK: NotificationKey
+public let BBSTabBarHasBringToFrontNotification = "BBSTabBarHasBringToFrontNotification"
+
 // MARK: PreMethods
 public func StringToCGFloat(_ string: String) -> CGFloat {
     guard let ans = Float(string) else {
-        return 0
+        return -1
     }
     return CGFloat(ans)
 }
@@ -24,15 +27,19 @@ public let BBSScreenHeight = BBSScreenBounds.height
 public let BBSCurrentSystemVersion: CGFloat = StringToCGFloat(UIDevice.current.systemVersion)
 public let BBSKeyWindow = UIApplication.shared.keyWindow
 
+public let BBSTabbarHeight: CGFloat = 49
+
 // MARK: Color
 public func UIColorFromRGB(_ rgbValue: NSInteger) -> UIColor {
     return UIColor.bbs_colorWith(hexValue: rgbValue)
 }
+public let AppTintColor = UIColorFromRGB(0xffffff)
 
 public let BBSStatusBarColor = UIColorFromRGB(0x466676)
 
 // MARK: Instance
 public let BBSApplication = UIApplication.shared
+let RootViewController = BBSRootViewController.shared
 
 // MARK: Methods
 public func showAlretWith(title: String, message: String, by self: UIViewController) -> Void {

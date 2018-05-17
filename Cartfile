@@ -7,3 +7,4 @@ github "SwiftyJSON/SwiftyJSON"
 github "slazyk/Observable-Swift"
 github "texturegroup/texture"
 github "Instagram/IGListKit" ~> 3.0
+github "SnapKit/SnapKit" ~> 4.0.0

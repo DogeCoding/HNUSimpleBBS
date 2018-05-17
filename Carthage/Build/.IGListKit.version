@@ -1,0 +1,9 @@
+{
+  "commitish" : "3.4.0",
+  "iOS" : [
+    {
+      "name" : "IGListKit",
+      "hash" : "8a7c5ddb9927aa8ef786bf8ecf71c1d3ff464dbe116878096e97839eabfeb813"
+    }
+  ]
+}
