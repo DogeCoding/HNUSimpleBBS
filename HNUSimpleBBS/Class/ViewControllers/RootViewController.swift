@@ -6,10 +6,10 @@
 //  Copyright © 2018年 CodingDoge. All rights reserved.
 //
 
-class RootViewController: BBSViewController {
+class RootViewController: UIViewController {
     
-    init() {
-        
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {

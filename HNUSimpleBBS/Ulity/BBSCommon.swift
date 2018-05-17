@@ -8,11 +8,20 @@
 
 import Kingfisher
 
+// MARK: PreMethods
+public func StringToCGFloat(_ string: String) -> CGFloat {
+    guard let ans = Float(string) else {
+        return 0
+    }
+    return CGFloat(ans)
+}
+
 // MARK: Size
 public let BBSScreenBounds = UIScreen.main.bounds
+public let BBSScreenScale = UIScreen.main.scale
 public let BBSScreenWidth = BBSScreenBounds.width
 public let BBSScreenHeight = BBSScreenBounds.height
-public let BBSCurrentSystemVersion: CGFloat = CGFloat(UIDevice.current.systemVersion)
+public let BBSCurrentSystemVersion: CGFloat = StringToCGFloat(UIDevice.current.systemVersion)
 public let BBSKeyWindow = UIApplication.shared.keyWindow
 
 // MARK: Color

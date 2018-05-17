@@ -6,7 +6,22 @@
 //  Copyright © 2018年 CodingDoge. All rights reserved.
 //
 
-class HomeViewController: BBSViewController {
+//import 
+
+class HomeViewController: ASViewController<ASCollectionNode> {
     
+    var data = HomeFeedModel()
+    
+    var collectionNode: ASCollectionNode? = nil
+    
+    init() {
+        let layout = UICollectionViewLayout()
+        let node = ASCollectionNode.init(collectionViewLayout: layout)
+        super.init(node: node)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
 }

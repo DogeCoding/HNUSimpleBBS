@@ -15,11 +15,15 @@ class BBSWindowWithStatusBarUnderlay: UIWindow {
         addSubview(_statusBarOpaqueUnderlayView)
     }
     
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         bringSubview(toFront: _statusBarOpaqueUnderlayView)
         
-        let statusBarFrame = CGRect.zero
+        var statusBarFrame = CGRect.zero
         statusBarFrame.size.width = BBSScreenWidth
         statusBarFrame.size.height = BBSApplication.statusBarFrame.size.height
         _statusBarOpaqueUnderlayView.frame = statusBarFrame
