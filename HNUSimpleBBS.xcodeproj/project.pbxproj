@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		213DF98120AB3E5B006F5C1F /* BBSWindowWithStatusBarUnderlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213DF98020AB3E5B006F5C1F /* BBSWindowWithStatusBarUnderlay.swift */; };
-		2142FAE720ACA3A300D76153 /* HomeFeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2142FAE620ACA3A300D76153 /* HomeFeedModel.swift */; };
+		2142FAE720ACA3A300D76153 /* WeiboModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2142FAE620ACA3A300D76153 /* WeiboModel.swift */; };
 		21D3508B2078FF3200474072 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D3508A2078FF3200474072 /* AppDelegate.swift */; };
 		21D350902078FF3200474072 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21D3508E2078FF3200474072 /* Main.storyboard */; };
 		21D350922078FF3200474072 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21D350912078FF3200474072 /* Assets.xcassets */; };
@@ -29,7 +29,6 @@
 		21D350D62079B7E600474072 /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D350D52079B7E600474072 /* MineViewController.swift */; };
 		21D350D82079B81000474072 /* HomeNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D350D72079B81000474072 /* HomeNewsCell.swift */; };
 		21D350DA2079BB4D00474072 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D350D92079BB4D00474072 /* BaseViewModel.swift */; };
-		DD3C9E7520A9755D0097FF4B /* AsyncDisplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD3C9E7420A9755C0097FF4B /* AsyncDisplayKit.framework */; };
 		DD3C9E7920A97E030097FF4B /* BBSNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3C9E7820A97E030097FF4B /* BBSNavigationBar.swift */; };
 		DD3C9E7B20A986200097FF4B /* BBSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3C9E7A20A986200097FF4B /* BBSViewController.swift */; };
 		DD3C9E8220A9A40A0097FF4B /* UIColor+BBSHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3C9E8120A9A40A0097FF4B /* UIColor+BBSHelper.swift */; };
@@ -38,6 +37,9 @@
 		DD7A9EE720AD249600ABE736 /* UIView+Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7A9EE620AD249600ABE736 /* UIView+Coordinate.swift */; };
 		DD7A9EE920AD2EAF00ABE736 /* IGListKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD7A9EE820AD2EAE00ABE736 /* IGListKit.framework */; };
 		DD7A9EEB20AD33A700ABE736 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD7A9EEA20AD33A700ABE736 /* SnapKit.framework */; };
+		DD7A9F1F20AE971500ABE736 /* WeiboViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7A9F1E20AE971500ABE736 /* WeiboViewModel.swift */; };
+		DD7A9F2120AEAC6800ABE736 /* WeiboFeedSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7A9F2020AEAC6800ABE736 /* WeiboFeedSectionController.swift */; };
+		DD7A9F2320AEACEC00ABE736 /* BaseSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7A9F2220AEACEC00ABE736 /* BaseSectionController.swift */; };
 		DDA3D98E20AB0A1A008F5737 /* BBSCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA3D98D20AB0A1A008F5737 /* BBSCommon.swift */; };
 		DDA3D99520AC3B3C008F5737 /* Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA3D99420AC3B3C008F5737 /* Then.swift */; };
 		DDA3D99720AD11CD008F5737 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA3D99620AD11CD008F5737 /* ScheduleViewController.swift */; };
@@ -59,11 +61,39 @@
 			remoteGlobalIDString = 21D350862078FF3200474072;
 			remoteInfo = HNUSimpleBBS;
 		};
+		DD7A9F1520AE624B00ABE736 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DD7A9F0F20AE624B00ABE736 /* AsyncDisplayKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B35061DA1B010EDF0018CF92;
+			remoteInfo = AsyncDisplayKit;
+		};
+		DD7A9F1720AE624B00ABE736 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DD7A9F0F20AE624B00ABE736 /* AsyncDisplayKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 058D09BC195D04C000B7D73C;
+			remoteInfo = AsyncDisplayKitTests;
+		};
+		DD7A9F1920AE624B00ABE736 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DD7A9F0F20AE624B00ABE736 /* AsyncDisplayKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 057D02BF1AC0A66700C7AC3C;
+			remoteInfo = AsyncDisplayKitTestHost;
+		};
+		DD7A9F1B20AE625600ABE736 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DD7A9F0F20AE624B00ABE736 /* AsyncDisplayKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = B35061D91B010EDF0018CF92;
+			remoteInfo = AsyncDisplayKit;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		213DF98020AB3E5B006F5C1F /* BBSWindowWithStatusBarUnderlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBSWindowWithStatusBarUnderlay.swift; sourceTree = "<group>"; };
-		2142FAE620ACA3A300D76153 /* HomeFeedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeFeedModel.swift; path = HNUSimpleBBS/Class/View/HomeFeedModel.swift; sourceTree = SOURCE_ROOT; };
+		2142FAE620ACA3A300D76153 /* WeiboModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WeiboModel.swift; path = HNUSimpleBBS/Class/View/WeiboModel.swift; sourceTree = SOURCE_ROOT; };
 		21D350872078FF3200474072 /* HNUSimpleBBS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HNUSimpleBBS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21D3508A2078FF3200474072 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21D3508F2078FF3200474072 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -104,6 +134,12 @@
 		DD7A9EE620AD249600ABE736 /* UIView+Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Coordinate.swift"; sourceTree = "<group>"; };
 		DD7A9EE820AD2EAE00ABE736 /* IGListKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IGListKit.framework; path = Carthage/Build/iOS/IGListKit.framework; sourceTree = "<group>"; };
 		DD7A9EEA20AD33A700ABE736 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
+		DD7A9EEF20AE603200ABE736 /* AsyncDisplayKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AsyncDisplayKit.h; path = HNUSimpleBBS/ThirdLibrarys/Texture/AsyncDisplayKit.h; sourceTree = "<group>"; };
+		DD7A9EF120AE609500ABE736 /* AsyncDisplayKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AsyncDisplayKit.h; path = HNUSimpleBBS/ThirdLibrarys/AsyncDisplayKit/AsyncDisplayKit.h; sourceTree = "<group>"; };
+		DD7A9F0F20AE624B00ABE736 /* AsyncDisplayKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AsyncDisplayKit.xcodeproj; path = Texture/AsyncDisplayKit.xcodeproj; sourceTree = "<group>"; };
+		DD7A9F1E20AE971500ABE736 /* WeiboViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeiboViewModel.swift; sourceTree = "<group>"; };
+		DD7A9F2020AEAC6800ABE736 /* WeiboFeedSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeiboFeedSectionController.swift; sourceTree = "<group>"; };
+		DD7A9F2220AEACEC00ABE736 /* BaseSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSectionController.swift; sourceTree = "<group>"; };
 		DDA3D98D20AB0A1A008F5737 /* BBSCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBSCommon.swift; sourceTree = "<group>"; };
 		DDA3D99420AC3B3C008F5737 /* Then.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Then.swift; sourceTree = "<group>"; };
 		DDA3D99620AD11CD008F5737 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
@@ -121,7 +157,6 @@
 				21D350B92079B43A00474072 /* Alamofire.framework in Frameworks */,
 				21D350BD2079B45000474072 /* IQKeyboardManagerSwift.framework in Frameworks */,
 				21D350BF2079B45400474072 /* Kingfisher.framework in Frameworks */,
-				DD3C9E7520A9755D0097FF4B /* AsyncDisplayKit.framework in Frameworks */,
 				21D350C12079B45A00474072 /* MBProgressHUD.framework in Frameworks */,
 				21D350C32079B45F00474072 /* ObjectMapper.framework in Frameworks */,
 				21D350C52079B46500474072 /* Observable.framework in Frameworks */,
@@ -174,6 +209,7 @@
 				21D350D12079B79000474072 /* Cartfile */,
 				DD3C9E6E20A8235C0097FF4B /* Utility */,
 				21D350CB2079B4CF00474072 /* Class */,
+				DD7A9EEC20AE5EF500ABE736 /* ThirdLibrarys */,
 				21D3508A2078FF3200474072 /* AppDelegate.swift */,
 				21D3508E2078FF3200474072 /* Main.storyboard */,
 				21D350912078FF3200474072 /* Assets.xcassets */,
@@ -233,6 +269,7 @@
 				21D350CC2079B4EA00474072 /* ViewModel */,
 				21D350C82079B47200474072 /* View */,
 				21D350CA2079B49100474072 /* ViewController */,
+				DD7A9F1D20AE95E200ABE736 /* SectionController */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -241,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				21D350D92079BB4D00474072 /* BaseViewModel.swift */,
+				DD7A9F1E20AE971500ABE736 /* WeiboViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -257,6 +295,8 @@
 		9B478E8D91DBDB1ABFAC53E3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DD7A9EEF20AE603200ABE736 /* AsyncDisplayKit.h */,
+				DD7A9EF120AE609500ABE736 /* AsyncDisplayKit.h */,
 				DD7A9EEA20AD33A700ABE736 /* SnapKit.framework */,
 				DD7A9EE820AD2EAE00ABE736 /* IGListKit.framework */,
 				DD3C9E7420A9755C0097FF4B /* AsyncDisplayKit.framework */,
@@ -291,9 +331,36 @@
 		DD3C9E6F20A823EB0097FF4B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2142FAE620ACA3A300D76153 /* HomeFeedModel.swift */,
+				2142FAE620ACA3A300D76153 /* WeiboModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		DD7A9EEC20AE5EF500ABE736 /* ThirdLibrarys */ = {
+			isa = PBXGroup;
+			children = (
+				DD7A9F0F20AE624B00ABE736 /* AsyncDisplayKit.xcodeproj */,
+			);
+			path = ThirdLibrarys;
+			sourceTree = "<group>";
+		};
+		DD7A9F1020AE624B00ABE736 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DD7A9F1620AE624B00ABE736 /* AsyncDisplayKit.framework */,
+				DD7A9F1820AE624B00ABE736 /* AsyncDisplayKitTests.xctest */,
+				DD7A9F1A20AE624B00ABE736 /* AsyncDisplayKitTestHost.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DD7A9F1D20AE95E200ABE736 /* SectionController */ = {
+			isa = PBXGroup;
+			children = (
+				DD7A9F2220AEACEC00ABE736 /* BaseSectionController.swift */,
+				DD7A9F2020AEAC6800ABE736 /* WeiboFeedSectionController.swift */,
+			);
+			path = SectionController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,6 +381,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				DD7A9F1C20AE625600ABE736 /* PBXTargetDependency */,
 			);
 			name = HNUSimpleBBS;
 			productName = HNUSimpleBBS;
@@ -394,6 +462,12 @@
 			mainGroup = 21D3507E2078FF3200474072;
 			productRefGroup = 21D350882078FF3200474072 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = DD7A9F1020AE624B00ABE736 /* Products */;
+					ProjectRef = DD7A9F0F20AE624B00ABE736 /* AsyncDisplayKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				21D350862078FF3200474072 /* HNUSimpleBBS */,
@@ -402,6 +476,30 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		DD7A9F1620AE624B00ABE736 /* AsyncDisplayKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AsyncDisplayKit.framework;
+			remoteRef = DD7A9F1520AE624B00ABE736 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DD7A9F1820AE624B00ABE736 /* AsyncDisplayKitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = AsyncDisplayKitTests.xctest;
+			remoteRef = DD7A9F1720AE624B00ABE736 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DD7A9F1A20AE624B00ABE736 /* AsyncDisplayKitTestHost.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = AsyncDisplayKitTestHost.app;
+			remoteRef = DD7A9F1920AE624B00ABE736 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		21D350852078FF3200474072 /* Resources */ = {
@@ -445,8 +543,6 @@
 				"$(SRCROOT)/Carthage/Build/iOS/ObjectMapper.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Observable.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/AsyncDisplayKit.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/IGListKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
 			);
 			outputPaths = (
@@ -513,15 +609,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD7A9F1F20AE971500ABE736 /* WeiboViewModel.swift in Sources */,
 				DDA3D99720AD11CD008F5737 /* ScheduleViewController.swift in Sources */,
 				21D350D62079B7E600474072 /* MineViewController.swift in Sources */,
 				21D3508B2078FF3200474072 /* AppDelegate.swift in Sources */,
 				21D350CE2079B50B00474072 /* HomeViewController.swift in Sources */,
 				21D350DA2079BB4D00474072 /* BaseViewModel.swift in Sources */,
+				DD7A9F2320AEACEC00ABE736 /* BaseSectionController.swift in Sources */,
 				DD3C9E7B20A986200097FF4B /* BBSViewController.swift in Sources */,
 				DD7A9EE720AD249600ABE736 /* UIView+Coordinate.swift in Sources */,
+				DD7A9F2120AEAC6800ABE736 /* WeiboFeedSectionController.swift in Sources */,
 				DD3C9E8220A9A40A0097FF4B /* UIColor+BBSHelper.swift in Sources */,
-				2142FAE720ACA3A300D76153 /* HomeFeedModel.swift in Sources */,
+				2142FAE720ACA3A300D76153 /* WeiboModel.swift in Sources */,
 				21D350D82079B81000474072 /* HomeNewsCell.swift in Sources */,
 				DDA3D99520AC3B3C008F5737 /* Then.swift in Sources */,
 				DD7A9EE320AD1CEA00ABE736 /* UIView+BBSSupport.swift in Sources */,
@@ -562,6 +661,11 @@
 			isa = PBXTargetDependency;
 			target = 21D350862078FF3200474072 /* HNUSimpleBBS */;
 			targetProxy = 21D350A72078FF3200474072 /* PBXContainerItemProxy */;
+		};
+		DD7A9F1C20AE625600ABE736 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AsyncDisplayKit;
+			targetProxy = DD7A9F1B20AE625600ABE736 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

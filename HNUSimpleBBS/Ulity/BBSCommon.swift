@@ -1,5 +1,5 @@
 //
-//  BBSMacro.swift
+//  BBSCommon.swift
 //  HNUSimpleBBS
 //
 //  Created by 杨扶恺 on 2018/5/15.
@@ -7,6 +7,15 @@
 //
 
 import Kingfisher
+
+// MARK: Tips
+func AssertMainThread() {
+    assert(Thread.current == Thread.main, "This method must be called on the main thread")
+}
+
+func AssertFail(_ message: String) {
+    assert(false, message)
+}
 
 // MARK: NotificationKey
 public let BBSTabBarHasBringToFrontNotification = "BBSTabBarHasBringToFrontNotification"
@@ -48,4 +57,20 @@ public func showAlretWith(title: String, message: String, by self: UIViewControl
         
     }))
     self.present(alert, animated: true, completion: nil)
+}
+
+func dispatch_queue_async_safe(queue: DispatchQueue, _ block: @escaping ()->()) {
+    if Thread.current.name == queue.label {
+        block()
+    } else {
+        queue.async {
+            block()
+        }
+    }
+}
+
+func dispatch_main_async_safe(_ block: @escaping () -> ()) {
+    dispatch_queue_async_safe(queue: DispatchQueue.main) {
+        block()
+    }
 }
