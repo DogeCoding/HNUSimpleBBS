@@ -22,10 +22,15 @@ class HomeViewController: ASViewController<ASCollectionNode>, ListAdapterDataSou
     
     lazy fileprivate var spinner = UIActivityIndicatorView(activityIndicatorStyle: .gray)
     
+    lazy fileprivate var segmentControl: BBSSegmentControl = BBSSegmentControl()
+    
+    fileprivate var contentView: UIScrollView = UIScrollView()
+    
     init() {
         let layout = UICollectionViewLayout()
         let node = ASCollectionNode.init(collectionViewLayout: layout)
         super.init(node: node)
+        setupUI()
         
         listAdaper.dataSource = self
         listAdaper.setASDKCollectionNode(collectionNode)
@@ -37,6 +42,9 @@ class HomeViewController: ASViewController<ASCollectionNode>, ListAdapterDataSou
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let testView = UIView(frame: CGRect(x: 0, y: 0, width: BBSScreenWidth, height: 100))
+        testView.backgroundColor = .red
+        view.addSubview(testView)
         
         collectionNode.view.alwaysBounceVertical = true
         refreshCtrl.addTarget(self, action: #selector(refreshFeed), for: .valueChanged)
@@ -44,7 +52,31 @@ class HomeViewController: ASViewController<ASCollectionNode>, ListAdapterDataSou
         
     }
     
+    // MARK: Private
+    fileprivate func setupUI() {
+        contentView.frame = CGRect(x: 0, y: 0, width: BBSScreenWidth, height: BBSScreenHeight)
+        contentView.delegate = self
+        view.addSubview(contentView)
+        var contentH = BBSScreenHeight
+        if IsIphone_X {
+            contentH = BBSScreenHeight-44-101
+            contentView.frame = CGRect(x: 0, y: 44, width: BBSScreenWidth, height: contentH)
+        }
+        contentView.contentSize = CGSize(width: BBSScreenWidth, height: contentH+0.5)
+        
+        
+        
+        segmentControl = BBSSegmentControl(titles: ["推荐", "学术活动", "就业信息", "教务处", "长沙热点"])
+        segmentControl.addTarget(self, action: #selector(segmentControl(action:)), for: .valueChanged)
+        view.addSubview(segmentControl)
+        segmentControl.setTop(20)
+    }
+    
     @objc fileprivate func refreshFeed() {
+        
+    }
+    
+    @objc fileprivate func segmentControl(action sender: BBSSegmentControl) {
         
     }
     
@@ -66,6 +98,8 @@ class HomeViewController: ASViewController<ASCollectionNode>, ListAdapterDataSou
     }
     
 }
+
+
 
 
 
