@@ -10,6 +10,7 @@ class BBSRootViewController: UIViewController {
     
     fileprivate var homeVC = HomeViewController()
     fileprivate var messageVC = MessageViewController()
+    fileprivate var addVC = PublishMessageViewController()
     fileprivate var scheduleVC = SheduleViewController()
     fileprivate var mineVC = MineViewController()
     fileprivate var tab = BBSTabbar()
@@ -23,10 +24,12 @@ class BBSRootViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = AppTintColor
+        
         handleClickHome()
         tab = tab.plaveAt(viewController: self)
         tab.homeBtn.addTarget(self, action: #selector(handleClickHome), for: .touchUpInside)
         tab.messageBtn.addTarget(self, action: #selector(handleClickMessage), for: .touchUpInside)
+        tab.addBtn.addTarget(self, action: #selector(handleClickAdd), for: .touchUpInside)
         tab.scheduleBtn.addTarget(self, action: #selector(handleClickSchedule), for: .touchUpInside)
         tab.mineBtn.addTarget(self, action: #selector(handleClickMine), for: .touchUpInside)
         
@@ -43,18 +46,20 @@ class BBSRootViewController: UIViewController {
             if currentVC != vc {
                 currentVC.view.removeFromSuperview()
                 currentVC.removeFromParentViewController()
+                
+                addChildViewController(vc)
+                vc.view.frame = view.bounds
+                view.insertSubview(vc.view, at: 0)
+                vc.view.snp.makeConstraints { (make) in
+                    make.edges.equalTo(view)
+                }
+                vc.didMove(toParentViewController: self)
+                self.currentVC = vc
+                setNeedsStatusBarAppearanceUpdate()
             }
         }
         
-        addChildViewController(vc)
-        vc.view.frame = view.bounds
-        view.insertSubview(vc.view, at: 0)
-        vc.view.snp.makeConstraints { (make) in
-            make.edges.equalTo(view)
-        }
-        vc.didMove(toParentViewController: self)
-        currentVC = vc
-        setNeedsStatusBarAppearanceUpdate()
+        
     }
     
     @objc fileprivate func handleClickHome() {
@@ -66,20 +71,38 @@ class BBSRootViewController: UIViewController {
             if currentVC == homeVC {
                 
             }
+        } else {
+            currentVC = homeVC
         }
         switchTabBarViewControllerTo(viewController: homeVC)
     }
     
     @objc fileprivate func handleClickMessage() {
+        tab.homeBtn.isSelected = false
+        tab.messageBtn.isSelected = true
+        tab.scheduleBtn.isSelected = false
+        tab.mineBtn.isSelected = false
+        switchTabBarViewControllerTo(viewController: messageVC)
+    }
+    
+    @objc fileprivate func handleClickAdd() {
         
     }
     
     @objc fileprivate func handleClickSchedule() {
-        
+        tab.homeBtn.isSelected = false
+        tab.messageBtn.isSelected = false
+        tab.scheduleBtn.isSelected = true
+        tab.mineBtn.isSelected = false
+        switchTabBarViewControllerTo(viewController: scheduleVC)
     }
     
     @objc fileprivate func handleClickMine() {
-        
+        tab.homeBtn.isSelected = false
+        tab.messageBtn.isSelected = false
+        tab.scheduleBtn.isSelected = false
+        tab.mineBtn.isSelected = true
+        switchTabBarViewControllerTo(viewController: mineVC)
     }
 }
 

@@ -23,11 +23,11 @@ class BaseSectionController: ListSectionController {
     
     fileprivate var initialDatasRead: Bool = true
     
-    func set(datas: Array<ListDiffable>, animated: Bool, _ completion: @escaping ()->()? = nil) {
+    func set(datas: Array<ListDiffable>, animated: Bool, _ completion: (()->())? = nil) {
         AssertMainThread()
         if !initialDatasRead {
             self.datas = datas
-            completion()
+            completion?()
             return
         }
             
@@ -40,7 +40,7 @@ class BaseSectionController: ListSectionController {
                     batchContext.insert(in: self, at: result.inserts)
                     batchContext.delete(in: self, at: result.deletes)
                 }, completion: { (finished) in
-                    completion()
+                    completion?()
                 })
             }
         }

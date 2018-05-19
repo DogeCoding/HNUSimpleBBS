@@ -15,6 +15,8 @@ class BBSTabbar: UIView {
     
     var messageBtn = UIButton()
     
+    var addBtn = UIButton()
+    
     var scheduleBtn = UIButton()
     
     var mineBtn = UIButton()
@@ -29,21 +31,61 @@ class BBSTabbar: UIView {
         backgroundView.frame = frame
         addSubview(backgroundView)
         
-        homeBtn.setImage(UIImage.init(named: ""), for: .normal)
-        homeBtn.setImage(UIImage.init(named: ""), for: .selected)
+        homeBtn.setImage(UIImage.init(named: "icon_home_normal"), for: .normal)
+        homeBtn.setImage(UIImage.init(named: "icon_home_selected"), for: .selected)
+        homeBtn.contentMode = .scaleToFill
+        addSubview(homeBtn)
         
-        messageBtn.setImage(UIImage.init(named: ""), for: .normal)
-        messageBtn.setImage(UIImage.init(named: ""), for: .selected)
+        messageBtn.setImage(UIImage.init(named: "icon_message_normal"), for: .normal)
+        messageBtn.setImage(UIImage.init(named: "icon_message_selected"), for: .selected)
+        messageBtn.contentMode = .scaleToFill
+        addSubview(messageBtn)
         
-        scheduleBtn.setImage(UIImage.init(named: ""), for: .normal)
-        scheduleBtn.setImage(UIImage.init(named: ""), for: .selected)
+        addBtn.setImage(UIImage(named: "icon_add"), for: .normal)
+        addBtn.contentMode = .scaleToFill
+        addSubview(addBtn)
         
-        mineBtn.setImage(UIImage.init(named: ""), for: .normal)
-        mineBtn.setImage(UIImage.init(named: ""), for: .selected)
+        scheduleBtn.setImage(UIImage.init(named: "icon_schedule_normal"), for: .normal)
+        scheduleBtn.setImage(UIImage.init(named: "icon_schedule_selected"), for: .selected)
+        scheduleBtn.contentMode = .scaleToFill
+        addSubview(scheduleBtn)
+        
+        mineBtn.setImage(UIImage.init(named: "icon_mine_normal"), for: .normal)
+        mineBtn.setImage(UIImage.init(named: "icon_mine_selected"), for: .selected)
+        mineBtn.contentMode = .scaleToFill
+        addSubview(mineBtn)
+        
+        addBtn.snp.makeConstraints { (make) in
+            make.width.equalTo(80)
+            make.center.equalTo(self)
+        }
+        messageBtn.snp.makeConstraints { (make) in
+            make.width.equalTo(49)
+            make.top.bottom.equalTo(self)
+            make.right.equalTo(addBtn.snp.left).offset(-15.5)
+        }
+        homeBtn.snp.makeConstraints { (make) in
+            make.width.equalTo(49)
+            make.top.bottom.equalTo(self)
+            make.right.equalTo(messageBtn.snp.left).offset(-15.5)
+        }
+        scheduleBtn.snp.makeConstraints { (make) in
+            make.width.equalTo(49)
+            make.top.bottom.equalTo(self)
+            make.left.equalTo(addBtn.snp.right).offset(15.5)
+        }
+        mineBtn.snp.makeConstraints { (make) in
+            make.width.equalTo(49)
+            make.top.bottom.equalTo(self)
+            make.left.equalTo(scheduleBtn.snp.right).offset(15.5)
+        }
+        
+        
         
         homeBtn.isSelected = true
         homeBtn.backgroundColor = .clear
         messageBtn.backgroundColor = .clear
+        addBtn.backgroundColor = .clear
         scheduleBtn.backgroundColor = .clear
         mineBtn.backgroundColor = .clear
         

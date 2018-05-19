@@ -4,5 +4,4 @@ github "Alamofire/Alamofire" ~> 4.7
 github "Hearst-DD/ObjectMapper"
 github "onevcat/Kingfisher" ~> 4.0
 github "SwiftyJSON/SwiftyJSON"
-github "slazyk/Observable-Swift"
 github "SnapKit/SnapKit" ~> 4.0.0

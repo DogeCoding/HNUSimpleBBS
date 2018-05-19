@@ -60,7 +60,7 @@ class HomeViewController: ASViewController<ASCollectionNode>, ListAdapterDataSou
     
     func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
         if let _ = object as? WeiboViewModel {
-            return Weibobase
+//            return Weibobase
         }
         return ListSectionController()
     }

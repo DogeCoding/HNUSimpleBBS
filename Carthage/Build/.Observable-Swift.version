@@ -1,9 +1,0 @@
-{
-  "commitish" : "v0.7.0",
-  "iOS" : [
-    {
-      "name" : "Observable",
-      "hash" : "b94e63b666fa7c8882a149bbb1eb4ee47ff397ea50ea97824010a779dd28244f"
-    }
-  ]
-}

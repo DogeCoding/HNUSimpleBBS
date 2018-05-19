@@ -16,13 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = BBSWindowWithStatusBarUnderlay.init(frame: BBSScreenBounds)
         window?.backgroundColor = .white
-        
-//        let rootVC = RootViewControlle.init()
-        
-        
         window?.makeKeyAndVisible()
-        
-//        window?.rootViewController = RootViewController()
+
+        window?.rootViewController = RootViewController
         
         return true
     }
