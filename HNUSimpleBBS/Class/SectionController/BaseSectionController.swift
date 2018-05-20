@@ -7,38 +7,39 @@
 //
 
 class BaseSectionController: ListSectionController {
-    fileprivate(set) var datas: Array<ListDiffable> = []
+    fileprivate(set) var items: Array<ListDiffable> = []
     
-    var numberOfDatas: NSInteger {
+    override func numberOfItems() -> Int {
         if !initialDatasRead {
-            pendingDatas = datas
+            pendingItems = items
             initialDatasRead = true
         }
-        return datas.count
+        return items.count
     }
     
     fileprivate let diffingQueue: DispatchQueue = DispatchQueue(label: "BaseSectionController.diffingQueue")
     
-    fileprivate var pendingDatas: Array<ListDiffable> = []
+    fileprivate var pendingItems: Array<ListDiffable> = []
     
     fileprivate var initialDatasRead: Bool = true
     
-    func set(datas: Array<ListDiffable>, animated: Bool, _ completion: (()->())? = nil) {
+    func set(items newItems: Array<ListDiffable>, animated: Bool, _ completion: (()->())? = nil) {
         AssertMainThread()
         if !initialDatasRead {
-            self.datas = datas
+            items = newItems
             completion?()
             return
         }
             
         self.diffingQueue.async {
-            let result = ListDiff(oldArray: self.pendingDatas, newArray: datas, option: .pointerPersonality)
-            self.pendingDatas = datas
+            let result = ListDiff(oldArray: self.pendingItems, newArray: newItems, option: .pointerPersonality)
+            self.pendingItems = newItems
             dispatch_main_async_safe {
                 let ctx = self.collectionContext
                 ctx?.performBatch(animated: animated, updates: { (batchContext) in
                     batchContext.insert(in: self, at: result.inserts)
                     batchContext.delete(in: self, at: result.deletes)
+                    self.items = newItems
                 }, completion: { (finished) in
                     completion?()
                 })

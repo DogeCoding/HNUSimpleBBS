@@ -6,15 +6,27 @@
 //  Copyright © 2018年 CodingDoge. All rights reserved.
 //
 
+
+fileprivate let defaultWeiboAvatarUrl = ""
+fileprivate let defaultWeiboAvatarImg = "defaultWeiboAvatarImg"
+fileprivate let defaultWeiboImgUrl = ""
+fileprivate let defaultWeiboImgPath = "defaultWeiboImgPath"
+
+
 class WeiboViewModel: BaseViewModel {
+    var userAvatarUrl: String
+    let defaultAvatarImg: String
+    
     var totalNumbersOfImgs: NSInteger
     var imgUrls: [String]
-    var message: String
+    let dafaultImgPath: String
     
     override init() {
-        let defaultHomeViewModelImgPath = "dafaultHomeViewModelImg"
+        userAvatarUrl = defaultWeiboAvatarUrl
+        defaultAvatarImg = defaultWeiboImgUrl
         totalNumbersOfImgs = 3
-        imgUrls = [defaultHomeViewModelImgPath, defaultHomeViewModelImgPath, defaultHomeViewModelImgPath]
-        message = "There are no new messages."
+        imgUrls = [defaultWeiboImgPath, defaultWeiboImgPath, defaultWeiboImgPath]
+        dafaultImgPath = defaultWeiboImgPath
+        super.init()
     }
 }

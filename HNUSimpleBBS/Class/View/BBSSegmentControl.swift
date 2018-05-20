@@ -33,6 +33,7 @@ class BBSSegmentControl: UIControl {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        
         var offsetX = (width()-totleWidth)/2
         for i in 0..<subviews.count {
             if let v = viewWithTag(kBBSSegmentControlTitleTagBase + i) {
@@ -48,7 +49,6 @@ class BBSSegmentControl: UIControl {
         selectedIndex = 0
         titleCount = 0
         totleWidth = 0
-        titles = []
         super.init(frame: frame)
     }
     
@@ -60,10 +60,10 @@ class BBSSegmentControl: UIControl {
         selectedIndex = -1
         titleCount = titles.count
         totleWidth = 0
-        self.titles = []
         super.init(frame: CGRect(x: 0, y: 0, width: BBSScreenWidth, height: kBBSSegmentControlHeight))
         set(titles: titles)
-//        setNeedsLayout()
+        
+        setNeedsLayout()
     }
     
     fileprivate func set(titles: Array<String>) {
@@ -81,7 +81,8 @@ class BBSSegmentControl: UIControl {
             label.frame = CGRect(x: 0, y: 0, width: size.width + 11*2, height: kBBSSegmentControlHeight)
             label.attributedText = attrStr
             label.textAlignment = .center
-            label.backgroundColor = .red
+            label.backgroundColor = .clear
+            label.alpha = 0.6
             addSubview(label)
             totleWidth += label.width()
             index += 1

@@ -7,6 +7,15 @@
 //
 
 extension UIColor {
+    
+    class func darkBlueColor() -> UIColor {
+        return UIColor(red: 70.0/255.0, green: 102.0/255.0, blue: 118.0/255.0, alpha: 1.0)
+    }
+    
+    class func lightBlueColor() -> UIColor {
+        return UIColor(red: 70.0/255.0, green: 165.0/255.0, blue: 196.0/255.0, alpha: 1.0)
+    }
+    
     class func bbs_redColorFrom(hexRGBColor color: NSInteger) -> CGFloat {
         return (CGFloat((color & 0xff0000) >> 16) / 255.0)
     }

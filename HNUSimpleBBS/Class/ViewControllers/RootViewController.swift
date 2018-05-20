@@ -25,8 +25,8 @@ class BBSRootViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = AppTintColor
         
-        handleClickHome()
         tab = tab.plaveAt(viewController: self)
+        handleClickHome()
         tab.homeBtn.addTarget(self, action: #selector(handleClickHome), for: .touchUpInside)
         tab.messageBtn.addTarget(self, action: #selector(handleClickMessage), for: .touchUpInside)
         tab.addBtn.addTarget(self, action: #selector(handleClickAdd), for: .touchUpInside)
@@ -57,6 +57,16 @@ class BBSRootViewController: UIViewController {
                 self.currentVC = vc
                 setNeedsStatusBarAppearanceUpdate()
             }
+        } else {
+            addChildViewController(vc)
+            vc.view.frame = view.bounds
+            view.insertSubview(vc.view, at: 0)
+            vc.view.snp.makeConstraints { (make) in
+                make.edges.equalTo(view)
+            }
+            vc.didMove(toParentViewController: self)
+            self.currentVC = vc
+            setNeedsStatusBarAppearanceUpdate()
         }
         
         
@@ -71,8 +81,6 @@ class BBSRootViewController: UIViewController {
             if currentVC == homeVC {
                 
             }
-        } else {
-            currentVC = homeVC
         }
         switchTabBarViewControllerTo(viewController: homeVC)
     }

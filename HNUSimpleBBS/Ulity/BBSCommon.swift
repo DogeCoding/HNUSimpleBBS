@@ -52,7 +52,7 @@ public let BBSCurrentSystemVersion: CGFloat = StringToCGFloat(UIDevice.current.s
 
 //public 
 
-public let BBSKeyWindow = UIApplication.shared.keyWindow
+public let BBSWindows = UIApplication.shared.windows
 
 public let BBSNavigationBarHeight: CGFloat = 44
 
