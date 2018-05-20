@@ -17,9 +17,11 @@ class BBSRootViewController: UIViewController {
     
     fileprivate var currentVC: UIViewController? = nil
     
-    static let shared = BBSRootViewController().then { _ in
+    static let shared: BBSRootViewController = {
+        let vc = BBSRootViewController()
         
-    }
+        return vc
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -111,6 +113,7 @@ class BBSRootViewController: UIViewController {
         tab.scheduleBtn.isSelected = false
         tab.mineBtn.isSelected = true
         switchTabBarViewControllerTo(viewController: mineVC)
+        mineVC.pushToLoginView()
     }
 }
 

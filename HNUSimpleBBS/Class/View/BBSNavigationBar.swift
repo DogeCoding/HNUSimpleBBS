@@ -37,7 +37,8 @@ class BBSNavigationBar: UINavigationBar {
     
     var barItem: UINavigationItem = UINavigationItem()
     
-    override init(frame: CGRect) {
+    init() {
+        let frame = CGRect(x: 0, y: 0, width: BBSScreenWidth, height: 44)
         super.init(frame: frame)
         
         let backItem = UIBarButtonItem.init(customView: backBtn)
@@ -55,7 +56,6 @@ class BBSNavigationBar: UINavigationBar {
             space.width = fixedSpace
             barItem.leftBarButtonItems = [space, backItem]
         }
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -88,7 +88,7 @@ class BBSNavigationBar: UINavigationBar {
         }
     }
     
-    func place(at vc: ASViewController<ASDisplayNode>) -> BBSNavigationBar {
+    func place(at vc: UIViewController) -> BBSNavigationBar {
         let wrap = UIView()
         wrap.addSubview(self)
         wrap.backgroundColor = .clear

@@ -55,6 +55,7 @@
 		DD1130AC20B1A98C003C0DFA /* CATransform3D+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD11309820B1A98C003C0DFA /* CATransform3D+Helper.swift */; };
 		DD1130AD20B1A98C003C0DFA /* Degree.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD11309920B1A98C003C0DFA /* Degree.swift */; };
 		DD1130AE20B1A98C003C0DFA /* UIColors+ColorPallete.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD11309A20B1A98C003C0DFA /* UIColors+ColorPallete.swift */; };
+		DD1130B020B1B78C003C0DFA /* BBSNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1130AF20B1B78C003C0DFA /* BBSNavigationViewController.swift */; };
 		DD3C9E7920A97E030097FF4B /* BBSNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3C9E7820A97E030097FF4B /* BBSNavigationBar.swift */; };
 		DD3C9E7B20A986200097FF4B /* BBSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3C9E7A20A986200097FF4B /* BBSViewController.swift */; };
 		DD7A9EE520AD222A00ABE736 /* BBSTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7A9EE420AD222A00ABE736 /* BBSTabbar.swift */; };
@@ -159,6 +160,7 @@
 		DD11309820B1A98C003C0DFA /* CATransform3D+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CATransform3D+Helper.swift"; sourceTree = "<group>"; };
 		DD11309920B1A98C003C0DFA /* Degree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Degree.swift; sourceTree = "<group>"; };
 		DD11309A20B1A98C003C0DFA /* UIColors+ColorPallete.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColors+ColorPallete.swift"; sourceTree = "<group>"; };
+		DD1130AF20B1B78C003C0DFA /* BBSNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBSNavigationViewController.swift; sourceTree = "<group>"; };
 		DD3C9E7420A9755C0097FF4B /* AsyncDisplayKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AsyncDisplayKit.framework; path = Carthage/Build/iOS/AsyncDisplayKit.framework; sourceTree = "<group>"; };
 		DD3C9E7820A97E030097FF4B /* BBSNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBSNavigationBar.swift; sourceTree = "<group>"; };
 		DD3C9E7A20A986200097FF4B /* BBSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBSViewController.swift; sourceTree = "<group>"; };
@@ -306,6 +308,7 @@
 				DD0DA29E20B12268009931D5 /* FeedViewController.swift */,
 				DD11307520B19D9B003C0DFA /* LoginModuel.swift */,
 				DD11309620B1A98B003C0DFA /* LoginViewController.swift */,
+				DD1130AF20B1B78C003C0DFA /* BBSNavigationViewController.swift */,
 			);
 			name = ViewController;
 			path = ViewControllers;
@@ -707,6 +710,7 @@
 				DD1130A120B1A98C003C0DFA /* LeftEar.swift in Sources */,
 				21D3508B2078FF3200474072 /* AppDelegate.swift in Sources */,
 				DD11309C20B1A98C003C0DFA /* CritterAssets.swift in Sources */,
+				DD1130B020B1B78C003C0DFA /* BBSNavigationViewController.swift in Sources */,
 				DD1130A820B1A98C003C0DFA /* RightEar.swift in Sources */,
 				21D350CE2079B50B00474072 /* HomeViewController.swift in Sources */,
 				21D350DA2079BB4D00474072 /* BaseViewModel.swift in Sources */,

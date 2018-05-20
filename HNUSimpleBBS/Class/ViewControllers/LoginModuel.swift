@@ -20,12 +20,12 @@ class LoginModuel: NSObject {
         super.init()
     }
     
-    class func showLoginContinue(@escaping _ withClosure closure: () -> ()) {
+    class func showLoginContinue(_ closure: () -> ()) {
         
     }
     
     fileprivate func showLoginView() {
         guard let window = BBSWindows.first else { return }
-        window.addSubview()
+        
     }
 }

@@ -9,16 +9,16 @@
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var window: BBSWindowWithStatusBarUnderlay?
+    var window: UIWindow?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        window = BBSWindowWithStatusBarUnderlay.init(frame: BBSScreenBounds)
-        window?.backgroundColor = .white
-        window?.makeKeyAndVisible()
+//        window = BBSWindowWithStatusBarUnderlay.init(frame: BBSScreenBounds)
+//        window?.backgroundColor = .white
+//        window?.makeKeyAndVisible()
 
-        window?.rootViewController = RootViewController
+        
         
         return true
     }

@@ -1,5 +1,5 @@
 //
-//  PersonViewController.swift
+//  MineViewController.swift
 //  HNUSimpleBBS
 //
 //  Created by CodingDoge on 2018/4/8.
@@ -16,7 +16,12 @@ class MineViewController: UIViewController {
         button.setTitle("Button", for: .normal)
         button.cornerRadius = 20
         button.spinnerColor = .white
-        view.addSubview(button)
+        
+//        view.addSubview(button)
+        let vc = UIViewController()
+        vc.view.backgroundColor = .red
+        
+        
     }
     
     @objc func handleClickBtn(sender: TransitionButton) {
@@ -34,6 +39,10 @@ class MineViewController: UIViewController {
                 })
             })
         }
+    }
+    
+    func pushToLoginView() {
+        RootViewController.navigationController?.pushViewController(LoginViewController(), animated: false)
     }
     
 }
