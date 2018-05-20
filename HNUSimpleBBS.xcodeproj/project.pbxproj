@@ -63,7 +63,7 @@
 
 /* Begin PBXFileReference section */
 		213DF98020AB3E5B006F5C1F /* BBSWindowWithStatusBarUnderlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBSWindowWithStatusBarUnderlay.swift; sourceTree = "<group>"; };
-		2142FAE620ACA3A300D76153 /* WeiboModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WeiboModel.swift; path = HNUSimpleBBS/Class/View/WeiboModel.swift; sourceTree = SOURCE_ROOT; };
+		2142FAE620ACA3A300D76153 /* WeiboModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WeiboModel.swift; path = HNUSimpleBBS/Class/Model/WeiboModel.swift; sourceTree = SOURCE_ROOT; };
 		21D350872078FF3200474072 /* HNUSimpleBBS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HNUSimpleBBS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21D3508A2078FF3200474072 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21D3508F2078FF3200474072 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -148,6 +148,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		21597CAC20B08D15006A9844 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2142FAE620ACA3A300D76153 /* WeiboModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		21D3507E2078FF3200474072 = {
 			isa = PBXGroup;
 			children = (
@@ -176,7 +184,7 @@
 				21D350D12079B79000474072 /* Cartfile */,
 				DD3C9E6E20A8235C0097FF4B /* Utility */,
 				21D350CB2079B4CF00474072 /* Class */,
-				DD7A9EEC20AE5EF500ABE736 /* ThirdLibrarys */,
+				DD7A9EEC20AE5EF500ABE736 /* lib */,
 				21D3508A2078FF3200474072 /* AppDelegate.swift */,
 				21D3508E2078FF3200474072 /* Main.storyboard */,
 				21D350912078FF3200474072 /* Assets.xcassets */,
@@ -234,7 +242,7 @@
 		21D350CB2079B4CF00474072 /* Class */ = {
 			isa = PBXGroup;
 			children = (
-				DD3C9E6F20A823EB0097FF4B /* Model */,
+				21597CAC20B08D15006A9844 /* Model */,
 				21D350CC2079B4EA00474072 /* ViewModel */,
 				21D350C82079B47200474072 /* View */,
 				21D350CA2079B49100474072 /* ViewController */,
@@ -295,19 +303,11 @@
 			path = Ulity;
 			sourceTree = "<group>";
 		};
-		DD3C9E6F20A823EB0097FF4B /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				2142FAE620ACA3A300D76153 /* WeiboModel.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		DD7A9EEC20AE5EF500ABE736 /* ThirdLibrarys */ = {
+		DD7A9EEC20AE5EF500ABE736 /* lib */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = ThirdLibrarys;
+			path = lib;
 			sourceTree = "<group>";
 		};
 		DD7A9F1D20AE95E200ABE736 /* SectionController */ = {
@@ -519,7 +519,7 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

@@ -6,7 +6,10 @@
 //  Copyright © 2018年 CodingDoge. All rights reserved.
 //
 
-class MineViewController: BBSViewController {
+class MineViewController: UIViewController {
     
+    override func viewDidLoad() {
+//        view.backgroundColor
+    }
     
 }
