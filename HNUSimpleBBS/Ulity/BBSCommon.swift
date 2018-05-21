@@ -27,10 +27,8 @@ public let BBSTabBarHasBringToFrontNotification = "BBSTabBarHasBringToFrontNotif
 
 // MARK: PreMethods
 public func StringToCGFloat(_ string: String) -> CGFloat {
-    guard let ans = Float(string) else {
-        return -1
-    }
-    return CGFloat(ans)
+    let ans = NSString(string: string)
+    return CGFloat(ans.floatValue)
 }
 
 

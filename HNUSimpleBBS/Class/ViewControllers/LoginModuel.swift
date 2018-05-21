@@ -9,23 +9,23 @@
 class LoginModuel: NSObject {
     var isLogin: Bool = false
     
-    fileprivate var loginView: UIView
-    
     static let shared = LoginModuel().then { _ in
         
     }
     
     fileprivate override init() {
-        loginView = UIView(frame: CGRect(x: 0, y: 0, width: BBSScreenWidth, height: BBSScreenHeight-BBSTabbarHeight))
         super.init()
     }
     
-    class func showLoginContinue(_ closure: () -> ()) {
-        
+    func showLoginContinue(_ closure: @escaping () -> ()) {
+        if !isLogin {
+            let loginViewController = LoginViewController()
+            loginViewController.loginSuccessClosure = closure
+            RootViewController.navigationController?.pushViewController(loginViewController, animated: false)
+        }
     }
     
     fileprivate func showLoginView() {
-        guard let window = BBSWindows.first else { return }
         
     }
 }

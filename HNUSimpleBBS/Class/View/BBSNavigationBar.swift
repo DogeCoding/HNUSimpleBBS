@@ -31,7 +31,7 @@ class BBSNavigationBar: UINavigationBar {
     var backBtn = UIButton().then {
         $0.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
         $0.addTarget(self, action: #selector(handleNaviBack), for: .touchUpInside)
-        $0.backgroundColor = UIColor.bbs_randomColor()
+        $0.backgroundColor = .clear
         $0.setImage(UIImage.init(named: "icon_nav_back"), for: .normal)
     }
     
@@ -56,6 +56,7 @@ class BBSNavigationBar: UINavigationBar {
             space.width = fixedSpace
             barItem.leftBarButtonItems = [space, backItem]
         }
+        items = [barItem]
     }
     
     required init?(coder aDecoder: NSCoder) {

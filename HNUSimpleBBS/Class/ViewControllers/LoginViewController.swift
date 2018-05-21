@@ -22,6 +22,9 @@ private let textFieldTopMargin: CGFloat = 38.8
 private let textFieldWidth: CGFloat = 206
 
 final class LoginViewController: UIViewController, UITextFieldDelegate {
+    
+    var loginSuccessClosure: (() -> ())? = nil
+    var loginFailClosure: (() -> ())? = nil
 
     private let critterView = CritterView(frame: critterViewFrame)
 
@@ -90,6 +93,8 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
         else {
             passwordTextField.resignFirstResponder()
             passwordDidResignAsFirstResponder()
+            loginSuccessClosure?()
+            RootViewController.navigationController?.popViewController(animated: false)
         }
         return true
     }
@@ -115,15 +120,31 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
 
     private func setUpView() {
         let bar: BBSNavigationBar = BBSNavigationBar().setTransparentStyle().place(at: self)
-        bar.backgroundColor = UIColor.loginDark
+        bar.backgroundColor = .clear
         bar.barItem.titleView = {
             let label = UILabel()
-            label.text = "我"
+            label.text = "登录"
             label.textColor = UIColorFromRGB(0x222222)
             label.font = UIFont.bbs_defaultFontWith(size: 18)
             label.sizeToFit()
             return label
         }()
+        
+        let button = TransitionButton()
+        view.addSubview(button)
+        button.snp.makeConstraints { (make) in
+            make.width.equalTo(100)
+            make.height.equalTo(50)
+            make.centerX.equalTo(view)
+            make.centerY.equalTo(view).offset(100)
+        }
+        button.addTarget(self, action: #selector(handleClickLoginBtn(sender:)), for: .touchUpInside)
+        button.backgroundColor = .loginLight
+        button.setTitle("确定", for: .normal)
+        button.titleLabel?.font = UIFont.bbs_defaultFontWith(size: 15)
+        button.setTitleColor(UIColorFromRGB(0x333333), for: .normal)
+        button.cornerRadius = 20
+        button.spinnerColor = .white
         
         
         view.backgroundColor = .loginDark
@@ -241,6 +262,23 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
         // 🎩✨ Magic to fix cursor position when toggling password visibility
         if let textRange = passwordTextField.textRange(from: passwordTextField.beginningOfDocument, to: passwordTextField.endOfDocument), let password = passwordTextField.text {
             passwordTextField.replace(textRange, withText: password)
+        }
+    }
+    
+    @objc func handleClickLoginBtn(sender: TransitionButton) {
+        sender.startAnimation()
+        let qualityOfServiceClass = DispatchQoS.QoSClass.background
+        let backgroundQueue = DispatchQueue.global(qos: qualityOfServiceClass)
+        backgroundQueue.async {
+            sleep(3)
+            
+            DispatchQueue.main.async(execute: {
+                sender.stopAnimation(animationStyle: .expand,
+                                     revertAfterDelay: 2,
+                                     completion: {
+                                        
+                })
+            })
         }
     }
 

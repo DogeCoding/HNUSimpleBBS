@@ -112,8 +112,9 @@ class BBSRootViewController: UIViewController {
         tab.messageBtn.isSelected = false
         tab.scheduleBtn.isSelected = false
         tab.mineBtn.isSelected = true
-        switchTabBarViewControllerTo(viewController: mineVC)
-        mineVC.pushToLoginView()
+        LoginModuel.shared.showLoginContinue {
+            self.switchTabBarViewControllerTo(viewController: self.mineVC)
+        }
     }
 }
 
