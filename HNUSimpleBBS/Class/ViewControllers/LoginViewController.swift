@@ -113,6 +113,14 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
 
         if let text = textField.text {
             critterView.isEcstatic = text.range(of: "@") != nil
+            
+            if text.count > 23 {
+                let it = iToast.makeText("已超出最大字数限制")
+                it.set(gravity: .center, offsetLeft: 0, offsetTop: -94)
+                it.show()
+                let index = text.index(text.startIndex, offsetBy: 23)
+                textField.text = String(text[..<index])
+            }
         }
     }
 

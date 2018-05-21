@@ -42,7 +42,6 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
         segmentControl = BBSSegmentControl(titles: titlesArray)
         segmentControl?.addTarget(self, action: #selector(segmentControl(action:)), for: .valueChanged)
         contentView.addSubview(segmentControl!)
-//        segmentControl?.setTop(20)
         
         for _ in 0..<titlesArray.count {
             vcArray.append(FeedViewController())

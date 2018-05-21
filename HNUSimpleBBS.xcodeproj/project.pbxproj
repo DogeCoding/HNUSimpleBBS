@@ -58,6 +58,7 @@
 		DD1130B020B1B78C003C0DFA /* BBSNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1130AF20B1B78C003C0DFA /* BBSNavigationViewController.swift */; };
 		DD3C9E7920A97E030097FF4B /* BBSNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3C9E7820A97E030097FF4B /* BBSNavigationBar.swift */; };
 		DD3C9E7B20A986200097FF4B /* BBSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3C9E7A20A986200097FF4B /* BBSViewController.swift */; };
+		DD6E726820B28AD60009AA9A /* iToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6E726720B28AD60009AA9A /* iToast.swift */; };
 		DD7A9EE520AD222A00ABE736 /* BBSTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7A9EE420AD222A00ABE736 /* BBSTabbar.swift */; };
 		DD7A9F1F20AE971500ABE736 /* WeiboViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7A9F1E20AE971500ABE736 /* WeiboViewModel.swift */; };
 		DD7A9F2120AEAC6800ABE736 /* WeiboFeedSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7A9F2020AEAC6800ABE736 /* WeiboFeedSectionController.swift */; };
@@ -166,6 +167,7 @@
 		DD3C9E7A20A986200097FF4B /* BBSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBSViewController.swift; sourceTree = "<group>"; };
 		DD3C9E7D20A990F50097FF4B /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		DD3C9E7E20A992010097FF4B /* HNUSimpleBBS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HNUSimpleBBS-Bridging-Header.h"; sourceTree = "<group>"; };
+		DD6E726720B28AD60009AA9A /* iToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iToast.swift; sourceTree = "<group>"; };
 		DD7A9EE420AD222A00ABE736 /* BBSTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBSTabbar.swift; sourceTree = "<group>"; };
 		DD7A9EE820AD2EAE00ABE736 /* IGListKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IGListKit.framework; path = Carthage/Build/iOS/IGListKit.framework; sourceTree = "<group>"; };
 		DD7A9EEA20AD33A700ABE736 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 				DD7A9EE420AD222A00ABE736 /* BBSTabbar.swift */,
 				DD7A9F8220B03A0C00ABE736 /* BBSSegmentControl.swift */,
 				DD11307320B19A93003C0DFA /* FeedHeaderNode.swift */,
+				DD6E726720B28AD60009AA9A /* iToast.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -708,6 +711,7 @@
 				DD7A9F7620B02BA200ABE736 /* UIDevice+BBSHelper.swift in Sources */,
 				DD1130AC20B1A98C003C0DFA /* CATransform3D+Helper.swift in Sources */,
 				DD1130A120B1A98C003C0DFA /* LeftEar.swift in Sources */,
+				DD6E726820B28AD60009AA9A /* iToast.swift in Sources */,
 				21D3508B2078FF3200474072 /* AppDelegate.swift in Sources */,
 				DD11309C20B1A98C003C0DFA /* CritterAssets.swift in Sources */,
 				DD1130B020B1B78C003C0DFA /* BBSNavigationViewController.swift in Sources */,
