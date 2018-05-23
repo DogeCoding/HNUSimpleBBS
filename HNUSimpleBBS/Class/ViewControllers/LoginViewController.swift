@@ -127,6 +127,7 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
     // MARK: - Private
 
     private func setUpView() {
+        UIApplication.shared.statusBarView?.backgroundColor = .loginDark
         let bar: BBSNavigationBar = BBSNavigationBar().setTransparentStyle().place(at: self)
         bar.backgroundColor = .clear
         bar.barItem.titleView = {

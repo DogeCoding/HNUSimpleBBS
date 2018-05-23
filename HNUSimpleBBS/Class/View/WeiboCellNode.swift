@@ -6,7 +6,7 @@
 //  Copyright © 2018年 CodingDoge. All rights reserved.
 //
 
-fileprivate let __USER_AVATAR_LENGTH: CGFloat = 30
+fileprivate let __USER_AVATAR_LENGTH: CGFloat = 50
 fileprivate let __FONT_SIZE: CGFloat = 14
 fileprivate let HORIZONTAL_BUFFER: CGFloat = 10
 fileprivate let VERTICAL_BUFFER: CGFloat = 5
@@ -18,7 +18,7 @@ fileprivate let InsetForFooter = UIEdgeInsetsMake(VERTICAL_BUFFER, HORIZONTAL_BU
 
 class WeiboCellNode: ASCellNode, ASNetworkImageNodeDelegate {
     
-    fileprivate var models: WeiboViewModel
+    fileprivate var model: WeiboModel
     
     fileprivate var userAvatarImageNode: ASNetworkImageNode
     
@@ -30,12 +30,12 @@ class WeiboCellNode: ASCellNode, ASNetworkImageNodeDelegate {
     
     lazy fileprivate var feedMessageLabel: ASTextNode = ASTextNode()
     
-    init(weiboViewModel model: WeiboViewModel) {
-        models = model
+    init(weiboModel: WeiboModel) {
+        model = weiboModel
         
         userAvatarImageNode = ASNetworkImageNode()
-        userAvatarImageNode.url = URL(string: models.userAvatarUrl)
-        userAvatarImageNode.defaultImage = UIImage(named: models.defaultAvatarImg)
+        userAvatarImageNode.url = URL(string: model.userAvatarUrl)
+        userAvatarImageNode.defaultImage = UIImage(named: model.defaultAvatarImg)
         userAvatarImageNode.placeholderEnabled = true
         userAvatarImageNode.placeholderFadeDuration = 1
         userAvatarImageNode.imageModificationBlock = { (image) in
@@ -44,19 +44,19 @@ class WeiboCellNode: ASCellNode, ASNetworkImageNodeDelegate {
         
         super.init()
         
-        userNameLabel = creatLayerBackedTextNodeWith(attributedString: models.userNameAttributedString(withFontSize: __FONT_SIZE))
+        userNameLabel = creatLayerBackedTextNodeWith(attributedString: model.userNameAttributedString(withFontSize: __FONT_SIZE))
         
-        feedTimePostLabel = creatLayerBackedTextNodeWith(attributedString: models.timeSincePostAttributedString(withFontSize: __FONT_SIZE))
+        feedTimePostLabel = creatLayerBackedTextNodeWith(attributedString: model.timeSincePostAttributedString(withFontSize: __FONT_SIZE))
         
-        feedMessageLabel = creatLayerBackedTextNodeWith(attributedString: models.messageAttributedString(withFontSize: __FONT_SIZE))
+        feedMessageLabel = creatLayerBackedTextNodeWith(attributedString: model.messageAttributedString(withFontSize: __FONT_SIZE))
         feedMessageLabel.maximumNumberOfLines = 4
         
-        for url in models.imgUrls {
+        for url in model.imgUrls {
             let imageNode = ASNetworkImageNode()
             imageNode.delegate = self
             imageNode.url = URL(string: url)
             imageNode.isLayerBacked = true
-            imageNode.defaultImage = UIImage(named: models.dafaultImgPath)
+            imageNode.defaultImage = UIImage(named: model.dafaultImgPath)
             imageNode.placeholderEnabled = true
             imageNode.placeholderFadeDuration = 1
             photoImageNodes.append(imageNode)
@@ -78,48 +78,66 @@ class WeiboCellNode: ASCellNode, ASNetworkImageNodeDelegate {
         
         let userInfoStack = ASStackLayoutSpec()
         userInfoStack.direction = .vertical
-        userInfoStack.style.flexShrink = 1
+        userInfoStack.style.flexGrow = 1
         headerChildren.append(userInfoStack)
         
-        userNameLabel.style.flexShrink = 1
+        userNameLabel.style.flexGrow = 1
         userInfoStack.children = [userNameLabel]
         
-        feedTimePostLabel.style.flexShrink = 1
+        feedTimePostLabel.style.flexGrow = 1
         userInfoStack.children?.append(feedTimePostLabel)
         
         headerStack.children = headerChildren
         
-        var footerItems: Array<ASLayoutElement> = []
-        for i in 0..<photoImageNodes.count {
-            photoImageNodes[i].style.preferredSize = CGSize(width: __PHOTO_WIDTH, height: __PHOTO_HEIGHT)
-            if i < 3 {
-                var ratio: CGFloat = 1
-                
-                if let image = photoImageNodes[i].image {
-                    ratio = image.size.height / image.size.width
-                } else if let image = photoImageNodes[i].defaultImage {
-                    ratio = image.size.height / image.size.width
-                }
-                let photoRatio = ASRatioLayoutSpec(ratio: ratio, child: photoImageNodes[i])
-                photoRatio.style.alignSelf = ASStackLayoutAlignSelf.center
-                footerItems.append(photoRatio)
-            }
-            break
+        let footerStack = ASStackLayoutSpec()
+        footerStack.direction = .horizontal
+        footerStack.spacing = HORIZONTAL_BUFFER
+        for imageNode in photoImageNodes {
+            imageNode.style.flexGrow = 1
         }
-        let footerStack = ASStackLayoutSpec(direction: .horizontal,
-                                            spacing: 10,
-                                            justifyContent: .center,
-                                            alignItems: .start,
-                                            children: footerItems)
-        footerStack.style.flexShrink = 1
+        footerStack.children = [photoImageNodes[0]]
+        for i in 1..<photoImageNodes.count {
+            footerStack.children?.append(photoImageNodes[i])
+        }
+//
+//        var footerItems: Array<ASLayoutElement> = []
+//        for i in 0..<photoImageNodes.count {
+//            photoImageNodes[i].style.preferredSize = CGSize(width: __PHOTO_WIDTH, height: __PHOTO_HEIGHT)
+//            if i < 3 {
+//                var ratio: CGFloat = 1
+//
+//                if let image = photoImageNodes[i].image {
+//                    ratio = image.size.height / image.size.width
+//                } else if let image = photoImageNodes[i].defaultImage {
+//                    ratio = image.size.height / image.size.width
+//                }
+//                let photoRatio = ASRatioLayoutSpec(ratio: ratio, child: photoImageNodes[i])
+//                photoRatio.style.alignSelf = ASStackLayoutAlignSelf.center
+//                footerItems.append(photoRatio)
+//            }
+//            break
+//        }
+//        let footerStack = ASStackLayoutSpec(direction: .horizontal,
+//                                            spacing: 10,
+//                                            justifyContent: .center,
+//                                            alignItems: .start,
+//                                            children: footerItems)
+//        footerStack.style.flexShrink = 1
         let verticalStack = ASStackLayoutSpec()
         verticalStack.direction = .vertical
+        feedMessageLabel.style.preferredSize = CGSize(width: BBSScreenWidth-VERTICAL_BUFFER*2, height: 40)
         verticalChildren.append(ASInsetLayoutSpec(insets: InsetForHeader, child: headerStack))
         verticalChildren.append(ASInsetLayoutSpec(insets: InsetForFooter, child: footerStack))
+        verticalChildren.append(ASInsetLayoutSpec(insets: InsetForFooter, child: feedMessageLabel))
         
         verticalStack.children = verticalChildren
         
         return verticalStack
+    }
+    
+    // MARK: Instance Methods
+    override func didEnterPreloadState() {
+        super.didEnterPreloadState()
     }
     
     // MARK: Private Helper

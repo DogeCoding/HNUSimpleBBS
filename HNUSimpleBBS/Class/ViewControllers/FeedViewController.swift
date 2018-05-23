@@ -6,9 +6,13 @@
 //  Copyright © 2018年 CodingDoge. All rights reserved.
 //
 
+protocol RefreshingSectionControllerProtocol {
+    func refreshContent(withCompletion completion: @escaping () -> ())
+}
+
 class FeedViewController: ASViewController<ASCollectionNode>, ListAdapterDataSource, ASCollectionDelegate {
     
-    fileprivate var datas: [WeiboViewModel] = []
+    fileprivate var data: WeiboViewModel = WeiboViewModel()
     
     fileprivate var collectionNode: ASCollectionNode {
         return node
@@ -23,7 +27,7 @@ class FeedViewController: ASViewController<ASCollectionNode>, ListAdapterDataSou
     lazy fileprivate var spinner = UIActivityIndicatorView(activityIndicatorStyle: .gray)
     
     init() {
-        let layout = UICollectionViewLayout()
+        let layout = UICollectionViewFlowLayout()
         let node = ASCollectionNode.init(collectionViewLayout: layout)
         super.init(node: node)
         
@@ -45,12 +49,15 @@ class FeedViewController: ASViewController<ASCollectionNode>, ListAdapterDataSou
     }
     
     @objc fileprivate func refreshFeed() {
-        
+        guard let secCtrl = listAdaper.sectionController(for: data) as? WeiboFeedSectionController else { return }
+        secCtrl.refreshContent {
+            self.refreshCtrl.endRefreshing()
+        }
     }
     
     // MARK: ListAdapterDataSource
     func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
-        return datas as [ListDiffable]
+        return [data] as [ListDiffable]
     }
     
     func emptyView(for listAdapter: ListAdapter) -> UIView? {
@@ -60,7 +67,7 @@ class FeedViewController: ASViewController<ASCollectionNode>, ListAdapterDataSou
     
     func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
         if let _ = object as? WeiboViewModel {
-//            return WeiboFeedSectionController()
+            return WeiboFeedSectionController()
         }
         return ListSectionController()
     }

@@ -8,6 +8,23 @@
 
 import Kingfisher
 
+// MARK: Infomation
+let defaultAvatarUrls = ["http://oo8snaf4x.bkt.clouddn.com/doge.jpg",
+                        "http://oo8snaf4x.bkt.clouddn.com/1a47fcc17d2e46b5b0d3e0f160d98a0320180123163519.jpg",
+                        "http://oo8snaf4x.bkt.clouddn.com/Unknown.jpg",
+                        "http://oo8snaf4x.bkt.clouddn.com/1.jpg",
+                        "http://oo8snaf4x.bkt.clouddn.com/Zjd3-fyiiahz2863063.jpg"]
+//"http://oo8snaf4x.bkt.clouddn.com/avater_placeholder@2x.png"
+let defaultAvatarImgPath = "icon_avatarImg"
+let defaultImgUrls = ["http://oo8snaf4x.bkt.clouddn.com/128.png"]
+let defaultWeiboImgPath = "icon_feed_img"
+
+func defaultAvatarRandom() -> Int {
+    return Int(arc4random()%UInt32(defaultAvatarUrls.count))
+}
+func defaultImgRandom() -> Int {
+    return Int(arc4random()%UInt32(defaultImgUrls.count))
+}
 
 // MARK: Tips
 func AssertMainThread() {

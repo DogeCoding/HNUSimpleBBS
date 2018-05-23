@@ -7,6 +7,9 @@
 //
 
 extension UIColor {
+    class func defaultYellow() -> UIColor {
+        return UIColorFromRGB(0xFED41E)
+    }
     
     class func darkBlueColor() -> UIColor {
         return UIColor(red: 70.0/255.0, green: 102.0/255.0, blue: 118.0/255.0, alpha: 1.0)

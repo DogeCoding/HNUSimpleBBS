@@ -190,7 +190,7 @@ class iToast: NSObject {
         point = CGPoint(x: point.x + settings.offsetLeft, y: point.y + settings.offsetTop)
         btn.center = point
         
-        timer = Timer(timeInterval: settings.duration.rawValue / 1000, target: self, selector: #selector(hideToast(theTimer:)), userInfo: nil, repeats: false)
+        timer = Timer(timeInterval: settings.duration.rawValue / 2000, target: self, selector: #selector(hideToast(theTimer:)), userInfo: nil, repeats: false)
         RunLoop.main.add(timer, forMode: .defaultRunLoopMode)
         
         btn.tag = CURRENT_TOAST_TAG
@@ -205,6 +205,7 @@ class iToast: NSObject {
         btn.alpha = 1
         UIView.commitAnimations()
         
+        view = btn
         btn.addTarget(self, action: #selector(hideToast(theTimer:)), for: .touchDown)
     }
     

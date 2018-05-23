@@ -25,7 +25,7 @@ class BBSRootViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = AppTintColor
+        view.backgroundColor = UIColor.defaultYellow()
         
         tab = tab.plaveAt(viewController: self)
         handleClickHome()

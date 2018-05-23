@@ -6,63 +6,72 @@
 //  Copyright © 2018年 CodingDoge. All rights reserved.
 //
 
-fileprivate let defaultUserName = "codingdoge"
+enum ViewModelDataType: Int {
+    case weibo = 0,
+    user
+}
 
 class BaseViewModel: NSObject, ListDiffable {
-    
-    var data: Any
-    
+
+    var datas: [ListDiffable]
+
     var requestUrl: String
     
     var requestCompletionBlock: () -> ()
-    
-    var userName: String
-    
-    var message: String
-    
-    var timeSincePost: String
-    
-    fileprivate var fetchDatasInProgress: Bool = false
-    fileprivate var refreshFeedInProgress: Bool = false
+        
+    fileprivate var isFetchDatasInProgress: Bool = false
+    fileprivate var isRefreshFeedInProgress: Bool = false
     
     override init() {
-        data = (Any).self
+        datas = []
         requestUrl = ""
         requestCompletionBlock = {}
-        userName = defaultUserName
-        message = "There are no new messages."
-        timeSincePost = "2018-1-1"
     }
     
     // MARK: Remote Data
-    func requestDatas(withCompletionBlock block: (Array<Any>) -> (), numResuletsToReturn numResults: NSInteger) {
-        if fetchDatasInProgress {
+    func requestDatas(withDataType dataType: ViewModelDataType, _ completionBlock: @escaping (Array<Any>) -> ()) {
+        if isFetchDatasInProgress {
             return
         } else {
-            fetchDatasInProgress = true
-            fetchDatas(withCompletionBlock: block, numResultsToReturn: numResults)
+            isFetchDatasInProgress = true
+            fetchDatas(withDataType: dataType, completionBlock)
         }
     }
     
-    fileprivate func fetchDatas(withCompletionBlock block: (Array<Any>) -> (), numResultsToReturn numResults: NSInteger) {
-        fetchDatas(withCompletionBlock: block, numResultsToreturn: numResults, isReplaceData: false)
+    fileprivate func fetchDatas(withDataType dataType: ViewModelDataType, _ completionBlock: @escaping (Array<Any>) -> ()) {
+        fetchDatas(withDataType: dataType, isReplaceData: false, completionBlock)
     }
     
-    fileprivate func fetchDatas(withCompletionBlock block: (Array<Any>) -> (), numResultsToreturn numResults: NSInteger, isReplaceData: Bool) {
+    fileprivate func fetchDatas(withDataType dataType: ViewModelDataType, isReplaceData: Bool, _ completionBlock: @escaping (Array<Any>) -> ()) {
+//        sleep(3)
+        switch dataType {
+        case .weibo:
+            for i in 0..<4 {
+                let model = WeiboModel()
+                model.userID = i
+                datas.append(model)
+            }
+        case .user:
+            for i in 0..<10 {
+                let model = UserModel()
+                datas.append(model)
+            }
+        }
         
+        completionBlock(datas)
+        isFetchDatasInProgress = false
     }
     
-    // MARK: UI Data
-    func userNameAttributedString(withFontSize size: CGFloat) -> NSAttributedString {
-        return NSAttributedString.attributedStringWith(string: userName, fontSize: size, color: UIColor.darkBlueColor())
-    }
-    
-    func messageAttributedString(withFontSize size: CGFloat) -> NSAttributedString {
-        return NSAttributedString.attributedStringWith(string: message, fontSize: size, color: UIColor.darkGray)
-    }
-    
-    func timeSincePostAttributedString(withFontSize size: CGFloat) -> NSAttributedString {
-        return NSAttributedString.attributedStringWith(string: timeSincePost, fontSize: size, color: UIColor.lightGray)
+    func refreshDatas(withDataType dataType: ViewModelDataType, _ completionBlock: @escaping (Array<Any>) -> ()) {
+        if isRefreshFeedInProgress {
+            return
+        } else {
+            isRefreshFeedInProgress = true
+            fetchDatas(withDataType: dataType, isReplaceData: true) { (newModels) in
+                completionBlock(newModels)
+                self.isRefreshFeedInProgress = false
+            }
+        }
     }
     
     // MARK: ListDiffable
@@ -71,10 +80,7 @@ class BaseViewModel: NSObject, ListDiffable {
     }
     
     func isEqual(toDiffableObject object: ListDiffable?) -> Bool {
-        if let object = object as? BaseViewModel {
-            return self == object
-        }
-        return false
+        guard let object = object as? BaseViewModel else { return false }
+        return self == object
     }
-    
 }

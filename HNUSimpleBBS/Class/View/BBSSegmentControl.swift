@@ -61,7 +61,7 @@ class BBSSegmentControl: UIControl {
         titleCount = titles.count
         totleWidth = 0
         super.init(frame: CGRect(x: 0, y: 0, width: BBSScreenWidth, height: kBBSSegmentControlHeight))
-        backgroundColor = .white
+        backgroundColor = UIColorFromRGB(0xFED414)
         set(titles: titles)
         
         setNeedsLayout()
