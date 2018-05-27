@@ -93,6 +93,8 @@ public let BBSApplication = UIApplication.shared
 
 let RootViewController = BBSRootViewController.shared
 
+let MyNamespace = Bundle.main.infoDictionary!["CFBundleExecutable"] as! String
+
 
 
 // MARK: Methods

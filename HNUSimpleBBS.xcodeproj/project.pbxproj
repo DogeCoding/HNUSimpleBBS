@@ -28,6 +28,11 @@
 		21F061AB20B3CE6900EFA1A1 /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F061AA20B3CE6900EFA1A1 /* CommentModel.swift */; };
 		21F061AD20B3CF5900EFA1A1 /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F061AC20B3CF5900EFA1A1 /* MessageViewModel.swift */; };
 		21F061AF20B3DD5600EFA1A1 /* MessageNormalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F061AE20B3DD5600EFA1A1 /* MessageNormalCell.swift */; };
+		21F061B120B4F6B900EFA1A1 /* UINavigationController+BBSHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F061B020B4F6B900EFA1A1 /* UINavigationController+BBSHelper.swift */; };
+		21F061B320B5A86E00EFA1A1 /* MessageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F061B220B5A86E00EFA1A1 /* MessageDetailViewController.swift */; };
+		21F061B520B681FB00EFA1A1 /* BBSMessageFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F061B420B681FB00EFA1A1 /* BBSMessageFooterView.swift */; };
+		21F061B720B7F00200EFA1A1 /* MessageDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F061B620B7F00200EFA1A1 /* MessageDetailHeaderView.swift */; };
+		21F061B920B83CE500EFA1A1 /* String+BBSHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F061B820B83CE500EFA1A1 /* String+BBSHelper.swift */; };
 		DD0DA29F20B12268009931D5 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0DA29E20B12268009931D5 /* FeedViewController.swift */; };
 		DD0DA2A120B13C5D009931D5 /* TailLoadingNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0DA2A020B13C5D009931D5 /* TailLoadingNode.swift */; };
 		DD0DA2A320B13C9A009931D5 /* WeiboCellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0DA2A220B13C9A009931D5 /* WeiboCellNode.swift */; };
@@ -138,6 +143,11 @@
 		21F061AA20B3CE6900EFA1A1 /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
 		21F061AC20B3CF5900EFA1A1 /* MessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
 		21F061AE20B3DD5600EFA1A1 /* MessageNormalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageNormalCell.swift; sourceTree = "<group>"; };
+		21F061B020B4F6B900EFA1A1 /* UINavigationController+BBSHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+BBSHelper.swift"; sourceTree = "<group>"; };
+		21F061B220B5A86E00EFA1A1 /* MessageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDetailViewController.swift; sourceTree = "<group>"; };
+		21F061B420B681FB00EFA1A1 /* BBSMessageFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBSMessageFooterView.swift; sourceTree = "<group>"; };
+		21F061B620B7F00200EFA1A1 /* MessageDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDetailHeaderView.swift; sourceTree = "<group>"; };
+		21F061B820B83CE500EFA1A1 /* String+BBSHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+BBSHelper.swift"; sourceTree = "<group>"; };
 		4246BF64B4F650EB68FDE5E9 /* libPods-HNUSimpleBBS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HNUSimpleBBS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DE42458D3AE3E27E7B256BC /* Pods-HNUSimpleBBS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HNUSimpleBBS.release.xcconfig"; path = "Pods/Target Support Files/Pods-HNUSimpleBBS/Pods-HNUSimpleBBS.release.xcconfig"; sourceTree = "<group>"; };
 		DD0DA29E20B12268009931D5 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
@@ -310,6 +320,8 @@
 				DD11307320B19A93003C0DFA /* FeedHeaderNode.swift */,
 				DD6E726720B28AD60009AA9A /* iToast.swift */,
 				21F061AE20B3DD5600EFA1A1 /* MessageNormalCell.swift */,
+				21F061B420B681FB00EFA1A1 /* BBSMessageFooterView.swift */,
+				21F061B620B7F00200EFA1A1 /* MessageDetailHeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -328,6 +340,7 @@
 				DD11307520B19D9B003C0DFA /* LoginModuel.swift */,
 				DD11309620B1A98B003C0DFA /* LoginViewController.swift */,
 				DD1130AF20B1B78C003C0DFA /* BBSNavigationViewController.swift */,
+				21F061B220B5A86E00EFA1A1 /* MessageDetailViewController.swift */,
 			);
 			name = ViewController;
 			path = ViewControllers;
@@ -493,6 +506,8 @@
 				DD0DA2A420B145FF009931D5 /* UIImage+BBSHelper.swift */,
 				DD0DA2A620B149BB009931D5 /* NSAttributedString+BBSHelper.swift */,
 				21597CAF20B36044006A9844 /* UIApplication+BBSHelper.swift */,
+				21F061B020B4F6B900EFA1A1 /* UINavigationController+BBSHelper.swift */,
+				21F061B820B83CE500EFA1A1 /* String+BBSHelper.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -722,6 +737,7 @@
 				DD1130A320B1A98C003C0DFA /* LeftEye.swift in Sources */,
 				DD11308020B1A194003C0DFA /* CGRectExtension.swift in Sources */,
 				DD0DA2A320B13C9A009931D5 /* WeiboCellNode.swift in Sources */,
+				21F061B520B681FB00EFA1A1 /* BBSMessageFooterView.swift in Sources */,
 				21D350D62079B7E600474072 /* MineViewController.swift in Sources */,
 				DD1130AA20B1A98C003C0DFA /* RightEye.swift in Sources */,
 				21F061AF20B3DD5600EFA1A1 /* MessageNormalCell.swift in Sources */,
@@ -746,6 +762,7 @@
 				21597CB020B36044006A9844 /* UIApplication+BBSHelper.swift in Sources */,
 				DD3C9E7B20A986200097FF4B /* BBSViewController.swift in Sources */,
 				DD7A9F2120AEAC6800ABE736 /* WeiboFeedSectionController.swift in Sources */,
+				21F061B120B4F6B900EFA1A1 /* UINavigationController+BBSHelper.swift in Sources */,
 				DD1130A220B1A98C003C0DFA /* LeftEarMask.swift in Sources */,
 				DD7A9F7720B02BA200ABE736 /* UIScrollView+BBSMJRefresh.swift in Sources */,
 				2142FAE720ACA3A300D76153 /* WeiboModel.swift in Sources */,
@@ -755,7 +772,10 @@
 				DD7A9F7920B02BA200ABE736 /* UIView+Coordinate.swift in Sources */,
 				DD7A9F7A20B02BA200ABE736 /* UIViewController+BBSSupport.swift in Sources */,
 				DD1130AB20B1A98C003C0DFA /* LoginViewController.swift in Sources */,
+				21F061B920B83CE500EFA1A1 /* String+BBSHelper.swift in Sources */,
 				DD0DA2A720B149BB009931D5 /* NSAttributedString+BBSHelper.swift in Sources */,
+				21F061B720B7F00200EFA1A1 /* MessageDetailHeaderView.swift in Sources */,
+				21F061B320B5A86E00EFA1A1 /* MessageDetailViewController.swift in Sources */,
 				DD0DA2A120B13C5D009931D5 /* TailLoadingNode.swift in Sources */,
 				DD1130A020B1A98C003C0DFA /* LeftArm.swift in Sources */,
 				DD7A9F8520B03E3200ABE736 /* UIFont+BBSHelper.swift in Sources */,

@@ -80,32 +80,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HNUSimpleBBS/Class/ViewModel/BaseViewModel.swift"
-            timestampString = "548658028.02268"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "requestDatas(withDataType:_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "HNUSimpleBBS/Class/View/WeiboCellNode.swift"
-            timestampString = "548658028.02273"
+            filePath = "HNUSimpleBBS/Ulity/Category/UIScrollView+BBSMJRefresh.swift"
+            timestampString = "548831565.9919831"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
-            landmarkName = "imageNode(_:didLoad:)"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "addUpTo(loadingTarget:finishAction:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

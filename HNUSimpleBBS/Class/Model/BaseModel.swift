@@ -8,6 +8,8 @@
 
 fileprivate let defaultUserName = "codingdoge"
 
+
+/// 基础数据包括: 用户名、发布时间、头像地址、feed描述
 class BaseModel: NSObject, ListDiffable {
     var userName: String
     
