@@ -53,7 +53,8 @@ class BBSRootViewController: UIViewController {
                 vc.view.frame = view.bounds
                 view.insertSubview(vc.view, at: 0)
                 vc.view.snp.makeConstraints { (make) in
-                    make.edges.equalTo(view)
+                    make.top.left.right.equalTo(view)
+                    make.bottom.equalTo(tab.snp.top)
                 }
                 vc.didMove(toParentViewController: self)
                 self.currentVC = vc
@@ -64,7 +65,8 @@ class BBSRootViewController: UIViewController {
             vc.view.frame = view.bounds
             view.insertSubview(vc.view, at: 0)
             vc.view.snp.makeConstraints { (make) in
-                make.edges.equalTo(view)
+                make.top.left.right.equalTo(view)
+                make.bottom.equalTo(tab.snp.top)
             }
             vc.didMove(toParentViewController: self)
             self.currentVC = vc

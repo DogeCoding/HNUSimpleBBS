@@ -41,7 +41,7 @@ class MessageViewController: UIViewController, UICollectionViewDataSource, UICol
         collectionView.snp.makeConstraints { (make) in
             make.top.equalTo(20)
             make.left.right.equalTo(view)
-            make.bottom.equalTo(view).offset(-BBSTabbarHeight)
+            make.bottom.equalTo(view)
         }
         
         _ = collectionView.addPullTo(refreshTarget: self, finishAction: #selector(handlePullToRefresh))
@@ -54,7 +54,7 @@ class MessageViewController: UIViewController, UICollectionViewDataSource, UICol
     
     // MARK: PullData
     @objc fileprivate func handlePullToRefresh() {
-        viewModel.requestDatas(withDataType: .user) { [weak self] _ in
+        viewModel.requestDatas(withDataType: .user) { [weak self] (datas) in
             if let `self` = self {
                 self.collectionView.reloadData()
                 self.collectionView.mj_header.endRefreshing()
@@ -94,7 +94,8 @@ class MessageViewController: UIViewController, UICollectionViewDataSource, UICol
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = MessageDetailViewController()
-        
+        guard let model = viewModel.datas[indexPath.row] as? UserModel else { return }
+        vc.model = model
         RootViewController.navigationController?.pushViewController(vc, animated: false)
     }
 }

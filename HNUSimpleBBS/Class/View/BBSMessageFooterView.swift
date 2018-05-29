@@ -25,7 +25,7 @@ class BBSMessageFooterView: UICollectionReusableView {
             tipLabel.textColor = textColor
         }
     }
-    fileprivate var tipLabel: UILabel
+    var tipLabel: UILabel
     fileprivate var isHasData = false
     fileprivate var isHasMore = false
     

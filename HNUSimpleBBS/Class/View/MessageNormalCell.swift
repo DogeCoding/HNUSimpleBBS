@@ -22,6 +22,7 @@ class MessageNormalCell: UICollectionViewCell {
             timeSincePostLabel.text = data.timeSincePost
             userNameLabel.text = data.userName
             titleLabel.text = data.title
+            setNeedsLayout()
         }
     }
     

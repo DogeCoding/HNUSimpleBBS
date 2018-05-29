@@ -111,7 +111,7 @@ class WeiboFeedSectionController: BaseSectionController, ASSectionController, Re
 
     func sizeRangeForSupplementaryElement(ofKind elementKind: String, at index: Int) -> ASSizeRange {
         if elementKind == UICollectionElementKindSectionHeader {
-            return ASSizeRangeUnconstrained
+            return ASSizeRangeZero
         } else {
             return ASSizeRangeZero
         }

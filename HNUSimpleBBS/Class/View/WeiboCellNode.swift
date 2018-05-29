@@ -10,11 +10,12 @@ fileprivate let __USER_AVATAR_LENGTH: CGFloat = 50
 fileprivate let __FONT_SIZE: CGFloat = 14
 fileprivate let HORIZONTAL_BUFFER: CGFloat = 10
 fileprivate let VERTICAL_BUFFER: CGFloat = 5
-fileprivate let __PHOTO_WIDTH = (BBSScreenWidth-20-40)/3
+fileprivate let __PHOTO_WIDTH = (BBSScreenWidth-HORIZONTAL_BUFFER*4)/3
 fileprivate let __PHOTO_HEIGHT: CGFloat = 70
 fileprivate let InsetForAvatar = UIEdgeInsetsMake(HORIZONTAL_BUFFER, 0, HORIZONTAL_BUFFER, HORIZONTAL_BUFFER)
-fileprivate let InsetForHeader = UIEdgeInsetsMake(0, HORIZONTAL_BUFFER, 0, HORIZONTAL_BUFFER)
-fileprivate let InsetForFooter = UIEdgeInsetsMake(VERTICAL_BUFFER, HORIZONTAL_BUFFER, VERTICAL_BUFFER, HORIZONTAL_BUFFER)
+fileprivate let InsetForHeader = UIEdgeInsetsMake(0, 0, 0, HORIZONTAL_BUFFER)
+fileprivate let InsetForFooter = UIEdgeInsetsMake(VERTICAL_BUFFER, 0, 0, -HORIZONTAL_BUFFER)
+fileprivate let InsetForLine = UIEdgeInsetsMake(0, 0, 0, -HORIZONTAL_BUFFER)
 
 class WeiboCellNode: ASCellNode, ASNetworkImageNodeDelegate {
     
@@ -29,6 +30,8 @@ class WeiboCellNode: ASCellNode, ASNetworkImageNodeDelegate {
     lazy fileprivate var feedTimePostLabel: ASTextNode = ASTextNode()
     
     lazy fileprivate var feedMessageLabel: ASTextNode = ASTextNode()
+    
+    lazy fileprivate var lineView: ASDisplayNode = ASDisplayNode()
     
     init(weiboModel: WeiboModel) {
         model = weiboModel
@@ -49,7 +52,7 @@ class WeiboCellNode: ASCellNode, ASNetworkImageNodeDelegate {
         feedTimePostLabel = creatLayerBackedTextNodeWith(attributedString: model.timeSincePostAttributedString(withFontSize: __FONT_SIZE))
         
         feedMessageLabel = creatLayerBackedTextNodeWith(attributedString: model.messageAttributedString(withFontSize: __FONT_SIZE))
-        feedMessageLabel.maximumNumberOfLines = 4
+        feedMessageLabel.maximumNumberOfLines = 0
         
         for url in model.imgUrls {
             let imageNode = ASNetworkImageNode()
@@ -61,6 +64,8 @@ class WeiboCellNode: ASCellNode, ASNetworkImageNodeDelegate {
             imageNode.placeholderFadeDuration = 1
             photoImageNodes.append(imageNode)
         }
+        
+        lineView.backgroundColor = UIColorFromRGB(0x333333)
         
         automaticallyManagesSubnodes = true
         
@@ -99,6 +104,10 @@ class WeiboCellNode: ASCellNode, ASNetworkImageNodeDelegate {
         for i in 1..<photoImageNodes.count {
             footerStack.children?.append(photoImageNodes[i])
         }
+        
+        feedMessageLabel.style.preferredSize = CGSize(width: BBSScreenWidth-HORIZONTAL_BUFFER*2, height: __FONT_SIZE+3)
+        
+        lineView.style.preferredSize = CGSize(width: BBSScreenWidth-HORIZONTAL_BUFFER*2, height: 1/BBSScreenScale)
 //
 //        var footerItems: Array<ASLayoutElement> = []
 //        for i in 0..<photoImageNodes.count {
@@ -129,6 +138,7 @@ class WeiboCellNode: ASCellNode, ASNetworkImageNodeDelegate {
         verticalChildren.append(ASInsetLayoutSpec(insets: InsetForHeader, child: headerStack))
         verticalChildren.append(ASInsetLayoutSpec(insets: InsetForFooter, child: footerStack))
         verticalChildren.append(ASInsetLayoutSpec(insets: InsetForFooter, child: feedMessageLabel))
+        verticalChildren.append(ASInsetLayoutSpec(insets: InsetForLine, child: lineView))
         
         verticalStack.children = verticalChildren
         

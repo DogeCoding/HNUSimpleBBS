@@ -7,9 +7,9 @@
 //
 
 fileprivate let kComponentPadding: CGFloat = 8
-fileprivate let avatarImgHeight: CGFloat = 30
+fileprivate let avatarImgHeight: CGFloat = 35
 fileprivate let titleFontSize: CGFloat = 17
-fileprivate let messageFontSize: CGFloat = 14
+fileprivate let messageFontSize: CGFloat = 16
 
 class MessageDetailHeaderView: UIScrollView {
     var data: UserModel {
@@ -23,54 +23,58 @@ class MessageDetailHeaderView: UIScrollView {
         }
     }
     
-    var title: UILabel
-    
-    var userAvatar: UIImageView
-    
-    var userName: UILabel
-    
-    var timeSincePostLabel: UILabel
-    
-    var message: UITextView
-    
-    override init(frame: CGRect) {
-        data = UserModel()
-        
-        title = UILabel()
-        title.text = "自习了解下?"
+    var title: UITextView = {
+        let title = UITextView()
+        title.textAlignment = .left
+        title.isEditable = false
         title.font = UIFont.bbs_defaultFontWith(size: titleFontSize)
         title.textColor = .black
-        let titleHeight = title.text!.calculateTextHeight(withFont: title.font)
-        
-        userAvatar = UIImageView(image: UIImage(named: "icon_avatarImg"))
-        
-        userName = UILabel()
-        userName.text = "codingdoge"
+        return title
+    }()
+    
+    var userAvatar: UIImageView = {
+        let userAvatar = UIImageView(image: UIImage(named: "icon_avatarImg"))
+        userAvatar.layer.cornerRadius = avatarImgHeight/2
+        userAvatar.layer.masksToBounds = true
+        return userAvatar
+    }()
+    
+    var userName: UILabel = {
+        let userName = UILabel()
         userName.textAlignment = .left
         userName.font = UIFont.bbs_fontWith(name: "PingFangSC-Regular", size: 14)
         userName.textColor = .black
-        
-        timeSincePostLabel = UILabel()
-        timeSincePostLabel.text = "2018-5-1"
+        return userName
+    }()
+    
+    var timeSincePostLabel: UILabel = {
+        let timeSincePostLabel = UILabel()
         timeSincePostLabel.textAlignment = .left
         timeSincePostLabel.font = UIFont.bbs_fontWith(name: "PingFangSC-Regular", size: 12)
         timeSincePostLabel.textColor = UIColorFromRGB(0x333333)
-        
-        message = UITextView()
-        message.text = "综合楼242\n自习\n👌？\n"
+        return timeSincePostLabel
+    }()
+    
+    var message: UITextView = {
+        let message = UITextView()
+        message.backgroundColor = .clear
         message.textAlignment = .left
         message.isEditable = false
         message.font = UIFont.systemFont(ofSize: messageFontSize)
-        let messageHeight = message.text.calculateTextHeight(withFont: message.font!)
+        return message
+    }()
+    
+    init() {
+        data = UserModel()
+        super.init(frame: .zero)
         
-        super.init(frame: frame)
+        backgroundColor = .white
+        
         addSubview(title)
-        title.snp.makeConstraints { (make) in
-            make.top.equalTo(self).offset(kComponentPadding)
-            make.left.equalTo(self).offset(kComponentPadding)
-            make.right.equalTo(self).offset(-kComponentPadding)
-            make.height.equalTo(titleHeight)
-        }
+        title.setTop(kComponentPadding)
+        title.setLeft(kComponentPadding)
+        title.setWidth(BBSScreenWidth-kComponentPadding*2)
+        title.setHeight(18)
         addSubview(userAvatar)
         userAvatar.snp.makeConstraints { (make) in
             make.top.equalTo(title.snp.bottom).offset(kComponentPadding)
@@ -81,24 +85,34 @@ class MessageDetailHeaderView: UIScrollView {
         userName.snp.makeConstraints { (make) in
             make.top.equalTo(userAvatar)
             make.left.equalTo(userAvatar.snp.right).offset(kComponentPadding/2)
-            make.height.equalTo(15)
+            make.height.equalTo(17)
             make.width.equalTo(200)
         }
         addSubview(timeSincePostLabel)
-        let timeTopPadding = (avatarImgHeight-15-13) > 0 ? (avatarImgHeight-15-13) : 0
+        let timeTopPadding = (avatarImgHeight-17-14) > 0 ? (avatarImgHeight-17-14) : 0
         timeSincePostLabel.snp.makeConstraints { (make) in
             make.top.equalTo(userName.snp.bottom).offset(timeTopPadding)
             make.left.equalTo(userName)
-            make.height.equalTo(13)
+            make.height.equalTo(14)
             make.right.equalTo(self)
         }
         addSubview(message)
         message.snp.makeConstraints { (make) in
             make.top.equalTo(userAvatar.snp.bottom).offset(kComponentPadding)
-            make.left.right.equalTo(self)
-            make.height.equalTo(messageHeight)
+            make.left.equalTo(self).offset(kComponentPadding)
+            make.width.equalTo(BBSScreenWidth-kComponentPadding*2)
+        }
+        let lineView = UIView()
+        lineView.backgroundColor = UIColorFromRGB(0x333333)
+        addSubview(lineView)
+        lineView.snp.makeConstraints { (make) in
+            make.bottom.equalTo(self)
+            make.left.equalTo(self)
+            make.width.equalTo(BBSScreenWidth)
+            make.height.equalTo(1/BBSScreenScale)
         }
     }
+    
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -107,12 +121,17 @@ class MessageDetailHeaderView: UIScrollView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        let messageHeight = message.text.calculateTextHeight(withFont: message.font!)
+        let messageHeight = ceil(message.sizeThatFits(CGSize(width: BBSScreenWidth - kComponentPadding*2, height: CGFloat(MAXFLOAT))).height)
+        let titleHeight = ceil(title.sizeThatFits(CGSize(width: BBSScreenWidth - kComponentPadding*2, height: CGFloat(MAXFLOAT))).height)
+        setHeight(kComponentPadding*4+avatarImgHeight+titleHeight+messageHeight)
+        title.setHeight(titleHeight)
         message.snp.remakeConstraints { (make) in
             make.top.equalTo(userAvatar.snp.bottom).offset(kComponentPadding)
-            make.left.right.equalTo(self)
+            make.left.equalTo(self).offset(kComponentPadding)
+            make.width.equalTo(BBSScreenWidth-kComponentPadding*2)
             make.height.equalTo(messageHeight)
         }
+        
     }
     
     class func calculateViewHeight(withData data: UserModel) -> CGFloat {

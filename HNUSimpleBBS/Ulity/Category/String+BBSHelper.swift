@@ -13,7 +13,7 @@ extension String {
     }
     
     func calculateTextHeight(withFont font: UIFont, width: CGFloat = 300) -> CGFloat {
-        let rect = NSString(string: self).boundingRect(with: CGSize(width: width, height: CGFloat(MAXFLOAT)), options: .usesLineFragmentOrigin, attributes: [.font : font], context: nil)
+        let rect = NSString(string: self).boundingRect(with: CGSize(width: width, height: CGFloat(MAXFLOAT)), options: [.usesLineFragmentOrigin, .usesFontLeading], attributes: [.font : font], context: nil)
         return ceil(rect.height)
     }
     

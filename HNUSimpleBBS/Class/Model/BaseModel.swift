@@ -11,20 +11,17 @@ fileprivate let defaultUserName = "codingdoge"
 
 /// 基础数据包括: 用户名、发布时间、头像地址、feed描述
 class BaseModel: NSObject, ListDiffable {
+    var userID: String
+    
     var userName: String
-    
-    var message: String
-    
-    var timeSincePost: String
     
     var userAvatarUrl: String
     
     let defaultAvatarImg: String
     
     override init() {
+        userID = DeviceUUID
         userName = defaultUserName
-        message = "There are no new messages."
-        timeSincePost = "2018-1-1"
         userAvatarUrl = defaultAvatarUrls[defaultAvatarRandom()]
         defaultAvatarImg = defaultAvatarImgPath
     }
@@ -32,14 +29,6 @@ class BaseModel: NSObject, ListDiffable {
     // MARK: UI Data
     func userNameAttributedString(withFontSize size: CGFloat) -> NSAttributedString {
         return NSAttributedString.attributedStringWith(string: userName, fontSize: size, color: UIColor.darkBlueColor())
-    }
-    
-    func messageAttributedString(withFontSize size: CGFloat) -> NSAttributedString {
-        return NSAttributedString.attributedStringWith(string: message, fontSize: size, color: UIColor.darkGray)
-    }
-    
-    func timeSincePostAttributedString(withFontSize size: CGFloat) -> NSAttributedString {
-        return NSAttributedString.attributedStringWith(string: timeSincePost, fontSize: size, color: UIColor.lightGray)
     }
     
     // MARK: ListDiffable

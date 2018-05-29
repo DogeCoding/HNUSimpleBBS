@@ -33,6 +33,8 @@
 		21F061B520B681FB00EFA1A1 /* BBSMessageFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F061B420B681FB00EFA1A1 /* BBSMessageFooterView.swift */; };
 		21F061B720B7F00200EFA1A1 /* MessageDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F061B620B7F00200EFA1A1 /* MessageDetailHeaderView.swift */; };
 		21F061B920B83CE500EFA1A1 /* String+BBSHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F061B820B83CE500EFA1A1 /* String+BBSHelper.swift */; };
+		21FC507F20BD99D2002E40BC /* MessageCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FC507E20BD99D2002E40BC /* MessageCommentCell.swift */; };
+		21FC508120BDA4AF002E40BC /* MessageCommentHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FC508020BDA4AF002E40BC /* MessageCommentHeaderView.swift */; };
 		DD0DA29F20B12268009931D5 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0DA29E20B12268009931D5 /* FeedViewController.swift */; };
 		DD0DA2A120B13C5D009931D5 /* TailLoadingNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0DA2A020B13C5D009931D5 /* TailLoadingNode.swift */; };
 		DD0DA2A320B13C9A009931D5 /* WeiboCellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0DA2A220B13C9A009931D5 /* WeiboCellNode.swift */; };
@@ -148,6 +150,8 @@
 		21F061B420B681FB00EFA1A1 /* BBSMessageFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBSMessageFooterView.swift; sourceTree = "<group>"; };
 		21F061B620B7F00200EFA1A1 /* MessageDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDetailHeaderView.swift; sourceTree = "<group>"; };
 		21F061B820B83CE500EFA1A1 /* String+BBSHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+BBSHelper.swift"; sourceTree = "<group>"; };
+		21FC507E20BD99D2002E40BC /* MessageCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCommentCell.swift; sourceTree = "<group>"; };
+		21FC508020BDA4AF002E40BC /* MessageCommentHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCommentHeaderView.swift; sourceTree = "<group>"; };
 		4246BF64B4F650EB68FDE5E9 /* libPods-HNUSimpleBBS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HNUSimpleBBS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DE42458D3AE3E27E7B256BC /* Pods-HNUSimpleBBS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HNUSimpleBBS.release.xcconfig"; path = "Pods/Target Support Files/Pods-HNUSimpleBBS/Pods-HNUSimpleBBS.release.xcconfig"; sourceTree = "<group>"; };
 		DD0DA29E20B12268009931D5 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
@@ -322,6 +326,8 @@
 				21F061AE20B3DD5600EFA1A1 /* MessageNormalCell.swift */,
 				21F061B420B681FB00EFA1A1 /* BBSMessageFooterView.swift */,
 				21F061B620B7F00200EFA1A1 /* MessageDetailHeaderView.swift */,
+				21FC507E20BD99D2002E40BC /* MessageCommentCell.swift */,
+				21FC508020BDA4AF002E40BC /* MessageCommentHeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -771,6 +777,8 @@
 				21D350D82079B81000474072 /* HomeNewsCell.swift in Sources */,
 				DD7A9F7920B02BA200ABE736 /* UIView+Coordinate.swift in Sources */,
 				DD7A9F7A20B02BA200ABE736 /* UIViewController+BBSSupport.swift in Sources */,
+				21FC508120BDA4AF002E40BC /* MessageCommentHeaderView.swift in Sources */,
+				21FC507F20BD99D2002E40BC /* MessageCommentCell.swift in Sources */,
 				DD1130AB20B1A98C003C0DFA /* LoginViewController.swift in Sources */,
 				21F061B920B83CE500EFA1A1 /* String+BBSHelper.swift in Sources */,
 				DD0DA2A720B149BB009931D5 /* NSAttributedString+BBSHelper.swift in Sources */,

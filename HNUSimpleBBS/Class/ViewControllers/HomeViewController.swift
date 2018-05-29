@@ -76,6 +76,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
     }
     
     fileprivate func switchVC(vc: FeedViewController) {
+        guard let segmentControl = segmentControl else { return }
         if let currentVC = currentVC {
             if currentVC != vc {
                 currentVC.view.removeFromSuperview()
@@ -85,7 +86,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
                 vc.view.frame = view.bounds
                 view.insertSubview(vc.view, at: 0)
                 vc.view.snp.makeConstraints { (make) in
-                    make.top.equalTo(view).offset(30)
+                    make.top.equalTo(segmentControl.snp.bottom)
                     make.left.right.bottom.equalTo(view)
 //                    make.edges.equalTo(view)
                 }
@@ -98,7 +99,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
             vc.view.frame = view.bounds
             view.insertSubview(vc.view, at: 0)
             vc.view.snp.makeConstraints { (make) in
-                make.top.equalTo(view).offset(30)
+                make.top.equalTo(segmentControl.snp.bottom)
                 make.left.right.bottom.equalTo(view)
 //                make.edges.equalTo(view)
             }

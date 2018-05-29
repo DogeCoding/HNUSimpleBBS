@@ -6,29 +6,33 @@
 //  Copyright © 2018年 CodingDoge. All rights reserved.
 //
 
-fileprivate class PPQNavigationBarCustomButton: UIButton {
+class PPQNavigationBarCustomButton: UIButton {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        if let view = self.superview {
-            if let view = view as? UIStackView, let superView = view.superview {
-                superView.addConstraint(NSLayoutConstraint(item: view,
-                                                           attribute: .leading,
-                                                           relatedBy: .equal,
-                                                           toItem: superView,
-                                                           attribute: .leading,
-                                                           multiplier: 1,
-                                                           constant: 0))
+        if BBSCurrentSystemVersion >= 11.0 {
+            var view: UIView = self
+            while (!(view is UINavigationBar) &&  (view.superview != nil) ) {
+                view = view.superview!
+                if view is UIStackView && view.superview != nil {
+                    view.superview!.addConstraint(NSLayoutConstraint(item: view,
+                                                               attribute: .leading,
+                                                               relatedBy: .equal,
+                                                               toItem: view.superview!,
+                                                               attribute: .leading,
+                                                               multiplier: 1,
+                                                               constant: 0))
+                    break
+                }
             }
         }
     }
-
 }
 
 
 
 class BBSNavigationBar: UINavigationBar {
-    var backBtn = UIButton().then {
+    var backBtn = PPQNavigationBarCustomButton().then {
         $0.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
         $0.addTarget(self, action: #selector(handleNaviBack), for: .touchUpInside)
         $0.backgroundColor = .clear
