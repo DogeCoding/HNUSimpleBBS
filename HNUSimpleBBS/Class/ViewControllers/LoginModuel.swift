@@ -9,6 +9,12 @@
 class LoginModuel: NSObject {
     var isLogin: Bool = false
     
+    var userInfo: BaseModel = {
+        let model = BaseModel()
+        model.userAvatarUrl = "http://oo8snaf4x.bkt.clouddn.com/WechatIMG10.jpeg"
+        return model
+    }()
+    
     static let shared = LoginModuel().then { _ in
         
     }
@@ -17,11 +23,17 @@ class LoginModuel: NSObject {
         super.init()
     }
     
-    func showLoginContinue(_ closure: @escaping () -> ()) {
+    func showLoginContinue(_ isShowToast: Bool = true, _ closure: @escaping (_ userInfo: BaseModel) -> ()) {
         if !isLogin {
+            if isShowToast {
+                iToast.makeText("小宝贝请先登录哦😯").show()
+            }
             let loginViewController = LoginViewController()
+            loginViewController.userInfo = userInfo
             loginViewController.loginSuccessClosure = closure
             RootViewController.navigationController?.pushViewController(loginViewController, animated: false)
+        } else {
+            closure(userInfo)
         }
     }
     

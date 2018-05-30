@@ -13,10 +13,32 @@ let defaultAvatarUrls = ["http://oo8snaf4x.bkt.clouddn.com/doge.jpg",
                         "http://oo8snaf4x.bkt.clouddn.com/1a47fcc17d2e46b5b0d3e0f160d98a0320180123163519.jpg",
                         "http://oo8snaf4x.bkt.clouddn.com/Unknown.jpg",
                         "http://oo8snaf4x.bkt.clouddn.com/1.jpg",
-                        "http://oo8snaf4x.bkt.clouddn.com/Zjd3-fyiiahz2863063.jpg"]
+                        "http://oo8snaf4x.bkt.clouddn.com/Zjd3-fyiiahz2863063.jpg",
+                        "http://oo8snaf4x.bkt.clouddn.com/WechatIMG11.jpeg",
+                        "http://oo8snaf4x.bkt.clouddn.com/WechatIMG14.jpeg",
+                        "http://oo8snaf4x.bkt.clouddn.com/WechatIMG12.jpeg",
+                        "http://oo8snaf4x.bkt.clouddn.com/WechatIMG13.jpeg"]
 //"http://oo8snaf4x.bkt.clouddn.com/avater_placeholder@2x.png"
 let defaultAvatarImgPath = "icon_avatarImg"
-let defaultImgUrls = ["http://oo8snaf4x.bkt.clouddn.com/128.png"]
+let defaultImgUrls = [
+                     "http://oo8snaf4x.bkt.clouddn.com/WechatIMG18.jpeg",
+                     "http://oo8snaf4x.bkt.clouddn.com/WechatIMG33.jpeg",
+                     "http://oo8snaf4x.bkt.clouddn.com/WechatIMG31.jpeg",
+                     "http://oo8snaf4x.bkt.clouddn.com/WechatIMG16.jpeg",
+                     "http://oo8snaf4x.bkt.clouddn.com/WechatIMG27.jpeg",
+                     "http://oo8snaf4x.bkt.clouddn.com/WechatIMG17.jpeg",
+                     "http://oo8snaf4x.bkt.clouddn.com/WechatIMG21.jpeg",
+                     "http://oo8snaf4x.bkt.clouddn.com/WechatIMG26.jpeg",
+                     "http://oo8snaf4x.bkt.clouddn.com/WechatIMG28.png",
+                     "http://oo8snaf4x.bkt.clouddn.com/WechatIMG22.jpeg",
+                     "http://oo8snaf4x.bkt.clouddn.com/WechatIMG25.png",
+                     "http://oo8snaf4x.bkt.clouddn.com/WechatIMG20.jpeg",
+                     "http://oo8snaf4x.bkt.clouddn.com/WechatIMG29.jpeg",
+                     "http://oo8snaf4x.bkt.clouddn.com/WechatIMG32.jpeg",
+                     "http://oo8snaf4x.bkt.clouddn.com/WechatIMG19.jpeg",
+                     "http://oo8snaf4x.bkt.clouddn.com/WechatIMG24.jpeg",
+                     "http://oo8snaf4x.bkt.clouddn.com/WechatIMG30.jpeg",
+                     "http://oo8snaf4x.bkt.clouddn.com/WechatIMG23.jpeg"]
 let defaultWeiboImgPath = "icon_feed_img"
 
 func defaultAvatarRandom() -> Int {
@@ -80,11 +102,11 @@ public func UIColorFromRGB(_ rgbValue: NSInteger) -> UIColor {
     return UIColor.bbs_colorWith(hexValue: rgbValue)
 }
 
-public let AppTintColor = UIColorFromRGB(0xffffff)      // 导航栏颜色
+public let AppTintColor = UIColorFromRGB(0x43BDCF)      // 主颜色
 
 public let AppTitleColor = UIColorFromRGB(0x222222)     // 导航栏标题颜色
 
-public let BBSStatusBarColor = UIColorFromRGB(0x466676)
+public let BBSStatusBarColor = UIColorFromRGB(0x43BDCF)
 
 
 

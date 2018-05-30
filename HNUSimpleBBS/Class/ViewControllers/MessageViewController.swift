@@ -22,14 +22,27 @@ class MessageViewController: UIViewController, UICollectionViewDataSource, UICol
         return collectionView
     }()
     
-    var viewModel: MessageViewModel = MessageViewModel()
-
+    var viewModel: MessageViewModel {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
+    
+    init() {
+        viewModel = MessageViewModel()
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = AppTintColor
+        view.backgroundColor = .white
         
         collectionView.alwaysBounceVertical = true
-        collectionView.backgroundColor = .clear
+        collectionView.backgroundColor = .white
         collectionView.delaysContentTouches = false
         collectionView.scrollsToTop = true
         

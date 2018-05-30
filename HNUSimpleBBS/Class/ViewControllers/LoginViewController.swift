@@ -23,8 +23,11 @@ private let textFieldWidth: CGFloat = 206
 
 final class LoginViewController: UIViewController, UITextFieldDelegate {
     
-    var loginSuccessClosure: (() -> ())? = nil
+    var loginSuccessClosure: ((_ userInfo: BaseModel) -> ())? = nil
     var loginFailClosure: (() -> ())? = nil
+    fileprivate var account: String = ""
+    fileprivate var password: String = ""
+    var userInfo: BaseModel = BaseModel()
 
     private let critterView = CritterView(frame: critterViewFrame)
 
@@ -72,6 +75,9 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
         let deadlineTime = DispatchTime.now() + .milliseconds(100)
 
         if textField == accoutTextField {
+            if let str = textField.text {
+                account = str
+            }
             DispatchQueue.main.asyncAfter(deadline: deadlineTime) { // 🎩✨ Magic to ensure animation starts
                 let fractionComplete = self.fractionComplete(for: textField)
                 self.critterView.startHeadRotation(startAt: fractionComplete)
@@ -79,6 +85,9 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
             }
         }
         else if textField == passwordTextField {
+            if let str = textField.text {
+                password = str
+            }
             DispatchQueue.main.asyncAfter(deadline: deadlineTime) { // 🎩✨ Magic to ensure animation starts
                 self.critterView.isShy = true
                 self.showHidePasswordButton.isHidden = false
@@ -88,30 +97,49 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == accoutTextField {
+            if let str = textField.text {
+                account = str
+            }
             passwordTextField.becomeFirstResponder()
         }
         else {
+            if let str = textField.text {
+                password = str
+            }
             passwordTextField.resignFirstResponder()
             passwordDidResignAsFirstResponder()
-            loginSuccessClosure?()
-            RootViewController.navigationController?.popViewController(animated: false)
+            checkAccount_Password()
+//            RootViewController.navigationController?.popViewController(animated: false)
         }
         return true
     }
 
     func textFieldDidEndEditing(_ textField: UITextField) {
         if textField == accoutTextField {
+            if let str = textField.text {
+                account = str
+            }
             critterView.stopHeadRotation()
+        } else {
+            if let str = textField.text {
+                password = str
+            }
         }
     }
 
     @objc private func textFieldDidChange(_ textField: UITextField) {
-        guard !critterView.isActiveStartAnimating, textField == accoutTextField else { return }
+        guard !critterView.isActiveStartAnimating, textField == accoutTextField else {
+            if let str = textField.text {
+                password = str
+            }
+            return
+        }
 
         let fractionComplete = self.fractionComplete(for: textField)
         critterView.updateHeadRotation(to: fractionComplete)
 
         if let text = textField.text {
+            account = text
             critterView.isEcstatic = text.range(of: "@") != nil
             
             if text.count > 23 {
@@ -120,6 +148,7 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
                 it.show()
                 let index = text.index(text.startIndex, offsetBy: 23)
                 textField.text = String(text[..<index])
+                account = String(text[..<index])
             }
         }
     }
@@ -127,7 +156,7 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
     // MARK: - Private
 
     private func setUpView() {
-        UIApplication.shared.statusBarView?.backgroundColor = .loginDark
+//        UIApplication.shared.statusBarView?.backgroundColor = .loginDark
         let bar: BBSNavigationBar = BBSNavigationBar().setTransparentStyle().place(at: self)
         bar.backgroundColor = .clear
         bar.barItem.titleView = {
@@ -279,18 +308,30 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
         let qualityOfServiceClass = DispatchQoS.QoSClass.background
         let backgroundQueue = DispatchQueue.global(qos: qualityOfServiceClass)
         backgroundQueue.async {
-            sleep(3)
+            sleep(1)
             
             DispatchQueue.main.async(execute: {
                 sender.stopAnimation(animationStyle: .expand,
                                      revertAfterDelay: 2,
                                      completion: {
-                                        
+                                        self.checkAccount_Password()
                 })
             })
         }
     }
 
+    // MARK: Verify
+    func checkAccount_Password() {
+        if password == "123" {
+            LoginModuel.shared.isLogin = true
+            RootViewController.navigationController?.popViewController(animated: false)
+            loginSuccessClosure?(userInfo)
+            
+        } else {
+            iToast.makeText("密码输入错误哦🐷").show()
+        }
+    }
+    
     // MARK: - Notifications
 
     private func setUpNotification() {

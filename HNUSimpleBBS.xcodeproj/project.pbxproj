@@ -35,6 +35,9 @@
 		21F061B920B83CE500EFA1A1 /* String+BBSHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F061B820B83CE500EFA1A1 /* String+BBSHelper.swift */; };
 		21FC507F20BD99D2002E40BC /* MessageCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FC507E20BD99D2002E40BC /* MessageCommentCell.swift */; };
 		21FC508120BDA4AF002E40BC /* MessageCommentHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FC508020BDA4AF002E40BC /* MessageCommentHeaderView.swift */; };
+		21FC508520BE73BD002E40BC /* MessageReplyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FC508420BE73BD002E40BC /* MessageReplyView.swift */; };
+		21FC508720BE838B002E40BC /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FC508620BE838B002E40BC /* SettingViewController.swift */; };
+		21FC508920BEBA6F002E40BC /* BBSTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FC508820BEBA6E002E40BC /* BBSTextView.swift */; };
 		DD0DA29F20B12268009931D5 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0DA29E20B12268009931D5 /* FeedViewController.swift */; };
 		DD0DA2A120B13C5D009931D5 /* TailLoadingNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0DA2A020B13C5D009931D5 /* TailLoadingNode.swift */; };
 		DD0DA2A320B13C9A009931D5 /* WeiboCellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0DA2A220B13C9A009931D5 /* WeiboCellNode.swift */; };
@@ -152,6 +155,9 @@
 		21F061B820B83CE500EFA1A1 /* String+BBSHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+BBSHelper.swift"; sourceTree = "<group>"; };
 		21FC507E20BD99D2002E40BC /* MessageCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCommentCell.swift; sourceTree = "<group>"; };
 		21FC508020BDA4AF002E40BC /* MessageCommentHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCommentHeaderView.swift; sourceTree = "<group>"; };
+		21FC508420BE73BD002E40BC /* MessageReplyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageReplyView.swift; sourceTree = "<group>"; };
+		21FC508620BE838B002E40BC /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		21FC508820BEBA6E002E40BC /* BBSTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBSTextView.swift; sourceTree = "<group>"; };
 		4246BF64B4F650EB68FDE5E9 /* libPods-HNUSimpleBBS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HNUSimpleBBS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DE42458D3AE3E27E7B256BC /* Pods-HNUSimpleBBS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HNUSimpleBBS.release.xcconfig"; path = "Pods/Target Support Files/Pods-HNUSimpleBBS/Pods-HNUSimpleBBS.release.xcconfig"; sourceTree = "<group>"; };
 		DD0DA29E20B12268009931D5 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
@@ -328,6 +334,8 @@
 				21F061B620B7F00200EFA1A1 /* MessageDetailHeaderView.swift */,
 				21FC507E20BD99D2002E40BC /* MessageCommentCell.swift */,
 				21FC508020BDA4AF002E40BC /* MessageCommentHeaderView.swift */,
+				21FC508420BE73BD002E40BC /* MessageReplyView.swift */,
+				21FC508820BEBA6E002E40BC /* BBSTextView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -347,6 +355,7 @@
 				DD11309620B1A98B003C0DFA /* LoginViewController.swift */,
 				DD1130AF20B1B78C003C0DFA /* BBSNavigationViewController.swift */,
 				21F061B220B5A86E00EFA1A1 /* MessageDetailViewController.swift */,
+				21FC508620BE838B002E40BC /* SettingViewController.swift */,
 			);
 			name = ViewController;
 			path = ViewControllers;
@@ -746,6 +755,7 @@
 				21F061B520B681FB00EFA1A1 /* BBSMessageFooterView.swift in Sources */,
 				21D350D62079B7E600474072 /* MineViewController.swift in Sources */,
 				DD1130AA20B1A98C003C0DFA /* RightEye.swift in Sources */,
+				21FC508920BEBA6F002E40BC /* BBSTextView.swift in Sources */,
 				21F061AF20B3DD5600EFA1A1 /* MessageNormalCell.swift in Sources */,
 				DD1130A620B1A98C003C0DFA /* Nose.swift in Sources */,
 				DD11309D20B1A98C003C0DFA /* CritterView.swift in Sources */,
@@ -761,6 +771,7 @@
 				DD1130A820B1A98C003C0DFA /* RightEar.swift in Sources */,
 				21D350CE2079B50B00474072 /* HomeViewController.swift in Sources */,
 				21F061AD20B3CF5900EFA1A1 /* MessageViewModel.swift in Sources */,
+				21FC508720BE838B002E40BC /* SettingViewController.swift in Sources */,
 				21D350DA2079BB4D00474072 /* BaseViewModel.swift in Sources */,
 				DD7A9F2320AEACEC00ABE736 /* BaseSectionController.swift in Sources */,
 				DD11307F20B1A194003C0DFA /* TransitionButton.swift in Sources */,
@@ -787,6 +798,7 @@
 				DD0DA2A120B13C5D009931D5 /* TailLoadingNode.swift in Sources */,
 				DD1130A020B1A98C003C0DFA /* LeftArm.swift in Sources */,
 				DD7A9F8520B03E3200ABE736 /* UIFont+BBSHelper.swift in Sources */,
+				21FC508520BE73BD002E40BC /* MessageReplyView.swift in Sources */,
 				DDA3D99520AC3B3C008F5737 /* Then.swift in Sources */,
 				DD1130AE20B1A98C003C0DFA /* UIColors+ColorPallete.swift in Sources */,
 				DD0DA29F20B12268009931D5 /* FeedViewController.swift in Sources */,

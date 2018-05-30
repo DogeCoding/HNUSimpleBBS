@@ -8,11 +8,11 @@
 
 class BBSRootViewController: UIViewController {
     
-    fileprivate var homeVC = HomeViewController()
-    fileprivate var messageVC = MessageViewController()
-    fileprivate var addVC = PublishMessageViewController()
-    fileprivate var scheduleVC = SheduleViewController()
-    fileprivate var mineVC = MineViewController()
+    var homeVC = HomeViewController()
+    var messageVC = MessageViewController()
+    var addVC = PublishMessageViewController()
+    var scheduleVC = SheduleViewController()
+    var mineVC = MineViewController()
     fileprivate var tab = BBSTabbar()
     
     fileprivate var currentVC: UIViewController? = nil
@@ -25,7 +25,7 @@ class BBSRootViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.defaultYellow()
+        view.backgroundColor = .clear
         
         tab = tab.plaveAt(viewController: self)
         handleClickHome()
@@ -76,11 +76,12 @@ class BBSRootViewController: UIViewController {
         
     }
     
-    @objc fileprivate func handleClickHome() {
+    @objc func handleClickHome() {
         tab.homeBtn.isSelected = true
         tab.messageBtn.isSelected = false
         tab.scheduleBtn.isSelected = false
         tab.mineBtn.isSelected = false
+//        view.backgroundColor = AppTintColor
         if let currentVC = currentVC {
             if currentVC == homeVC {
                 
@@ -89,19 +90,22 @@ class BBSRootViewController: UIViewController {
         switchTabBarViewControllerTo(viewController: homeVC)
     }
     
-    @objc fileprivate func handleClickMessage() {
+    @objc func handleClickMessage() {
         tab.homeBtn.isSelected = false
         tab.messageBtn.isSelected = true
         tab.scheduleBtn.isSelected = false
         tab.mineBtn.isSelected = false
+//        view.backgroundColor = .white
         switchTabBarViewControllerTo(viewController: messageVC)
     }
     
-    @objc fileprivate func handleClickAdd() {
-        
+    @objc func handleClickAdd() {
+        LoginModuel.shared.showLoginContinue { (userInfo) in
+            RootViewController.navigationController?.pushViewController(self.addVC, animated: false)
+        }
     }
     
-    @objc fileprivate func handleClickSchedule() {
+    @objc func handleClickSchedule() {
         tab.homeBtn.isSelected = false
         tab.messageBtn.isSelected = false
         tab.scheduleBtn.isSelected = true
@@ -109,12 +113,13 @@ class BBSRootViewController: UIViewController {
         switchTabBarViewControllerTo(viewController: scheduleVC)
     }
     
-    @objc fileprivate func handleClickMine() {
-        tab.homeBtn.isSelected = false
-        tab.messageBtn.isSelected = false
-        tab.scheduleBtn.isSelected = false
-        tab.mineBtn.isSelected = true
-        LoginModuel.shared.showLoginContinue {
+    @objc func handleClickMine() {
+        LoginModuel.shared.showLoginContinue { (userInfo) in
+            self.tab.homeBtn.isSelected = false
+            self.tab.messageBtn.isSelected = false
+            self.tab.scheduleBtn.isSelected = false
+            self.tab.mineBtn.isSelected = true
+            self.mineVC.data = userInfo
             self.switchTabBarViewControllerTo(viewController: self.mineVC)
         }
     }

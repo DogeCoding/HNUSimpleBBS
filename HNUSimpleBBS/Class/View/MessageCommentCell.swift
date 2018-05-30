@@ -32,7 +32,8 @@ class MessageCommentCell: UICollectionViewCell {
         avatarImg = UIImageView()
         avatarImg.layer.masksToBounds = true
         avatarImg.layer.cornerRadius = avatarImgHeight/2
-        avatarImg.sizeToFit()
+        avatarImg.contentScaleFactor = BBSScreenScale
+        avatarImg.contentMode = .scaleAspectFill
         //        avatarImg.isUserInteractionEnabled = false
         
         timeSincePostLabel = UILabel()
@@ -50,6 +51,7 @@ class MessageCommentCell: UICollectionViewCell {
         commentText.textAlignment = .left
         commentText.isEditable = false
         commentText.font = UIFont.systemFont(ofSize: commentFontSize)
+        commentText.textColor = .black
         
         indicateLine = UIView()
         indicateLine.backgroundColor = UIColorFromRGB(0x333333)
@@ -86,7 +88,8 @@ class MessageCommentCell: UICollectionViewCell {
         commentText.snp.makeConstraints { (make) in
             make.top.equalTo(timeSincePostLabel.snp.bottom).offset(kComponentPadding)
             make.left.equalTo(timeSincePostLabel)
-            make.width.equalTo(BBSScreenWidth-kComponentPadding*3-avatarImgHeight)
+            make.right.equalTo(self).offset(-kComponentPadding)
+            make.bottom.equalTo(self).offset(-1/BBSScreenScale)
         }
         
         addSubview(indicateLine)

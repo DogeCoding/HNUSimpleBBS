@@ -9,7 +9,7 @@
 extension UINavigationController {
     func popToStackViewController(withClassName name: String, animated: Bool) -> UIViewController {
         var vc = UIViewController()
-        guard let cls = NSClassFromString(MyNamespace+name) as? UIViewController.Type else {
+        guard let cls = NSClassFromString(MyNamespace+"."+name) else {
             return vc
         }
         for tvc in viewControllers {

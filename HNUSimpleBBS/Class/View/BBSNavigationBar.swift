@@ -32,7 +32,7 @@ class PPQNavigationBarCustomButton: UIButton {
 
 
 class BBSNavigationBar: UINavigationBar {
-    var backBtn = PPQNavigationBarCustomButton().then {
+    var backBtn: UIButton? = PPQNavigationBarCustomButton().then {
         $0.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
         $0.addTarget(self, action: #selector(handleNaviBack), for: .touchUpInside)
         $0.backgroundColor = .clear
@@ -45,7 +45,7 @@ class BBSNavigationBar: UINavigationBar {
         let frame = CGRect(x: 0, y: 0, width: BBSScreenWidth, height: 44)
         super.init(frame: frame)
         
-        let backItem = UIBarButtonItem.init(customView: backBtn)
+        let backItem = UIBarButtonItem.init(customView: backBtn!)
         
         var fixedSpace: CGFloat = 0
         if BBSScreenWidth > 370 {
@@ -75,7 +75,7 @@ class BBSNavigationBar: UINavigationBar {
     
     func setBottomLineStyle() -> BBSNavigationBar {
         isTranslucent = false
-        barTintColor = AppTintColor
+        barTintColor = .white
         
         titleTextAttributes = [.foregroundColor : AppTitleColor]
         let ly = CALayer()
@@ -129,6 +129,9 @@ class BBSNavigationBar: UINavigationBar {
     }
     
     func replace(backTarget target: Any, selector: Selector) {
+        guard let backBtn = backBtn else {
+            return
+        }
         let allTargets = backBtn.allTargets
         for tg in allTargets {
             backBtn.removeTarget(tg, action: nil, for: .touchUpInside)

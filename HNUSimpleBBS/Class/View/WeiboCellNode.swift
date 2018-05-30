@@ -11,7 +11,7 @@ fileprivate let __FONT_SIZE: CGFloat = 14
 fileprivate let HORIZONTAL_BUFFER: CGFloat = 10
 fileprivate let VERTICAL_BUFFER: CGFloat = 5
 fileprivate let __PHOTO_WIDTH = (BBSScreenWidth-HORIZONTAL_BUFFER*4)/3
-fileprivate let __PHOTO_HEIGHT: CGFloat = 70
+fileprivate let __PHOTO_HEIGHT: CGFloat = 100
 fileprivate let InsetForAvatar = UIEdgeInsetsMake(HORIZONTAL_BUFFER, 0, HORIZONTAL_BUFFER, HORIZONTAL_BUFFER)
 fileprivate let InsetForHeader = UIEdgeInsetsMake(0, 0, 0, HORIZONTAL_BUFFER)
 fileprivate let InsetForFooter = UIEdgeInsetsMake(VERTICAL_BUFFER, 0, 0, -HORIZONTAL_BUFFER)
@@ -99,6 +99,9 @@ class WeiboCellNode: ASCellNode, ASNetworkImageNodeDelegate {
         footerStack.spacing = HORIZONTAL_BUFFER
         for imageNode in photoImageNodes {
             imageNode.style.flexGrow = 1
+        }
+        for photo in photoImageNodes {
+            photo.style.preferredSize = CGSize(width: __PHOTO_WIDTH, height: __PHOTO_HEIGHT)
         }
         footerStack.children = [photoImageNodes[0]]
         for i in 1..<photoImageNodes.count {

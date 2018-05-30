@@ -23,13 +23,13 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .white
+        view.backgroundColor = UIColorFromRGB(0x43BDCF)
         setupUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        UIApplication.shared.statusBarView?.backgroundColor = UIColor.defaultYellow()
+        UIApplication.shared.statusBarView?.backgroundColor = .clear
     }
     
     // MARK: Private

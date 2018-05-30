@@ -28,12 +28,22 @@ class MessageDetailViewController: UIViewController, UIScrollViewDelegate, UICol
     
     var headerView: MessageDetailHeaderView = MessageDetailHeaderView()
     
+    var commentBtn: UIButton = {
+        let btn = UIButton()
+//        btn.setImage(UIImage(named: "icon_message_comment"), for: .normal)
+        btn.imageView?.contentMode = .scaleAspectFill
+        btn.setTitle("回帖", for: .normal)
+        btn.addTarget(self, action: #selector(clickCommentBtn), for: .touchUpInside)
+        btn.contentMode = .scaleAspectFill
+        return btn
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .white
+        view.backgroundColor = AppTintColor
         bar = bar.place(at: self)
-        bar.backgroundColor = .clear
+        bar.backgroundColor = AppTintColor
         bar.barItem.titleView = {
             let label = UILabel()
             label.text = "BBS"
@@ -43,15 +53,21 @@ class MessageDetailViewController: UIViewController, UIScrollViewDelegate, UICol
             return label
         }()
 
-        model.message = "啊啊啊的弗兰克敬爱的联发科甲氨蝶呤发卡量的看法了的咖啡机埃里克打飞机啊了解到法律空间法"
+        model.message = "蝶恋花\n伫倚危楼风细细，望极春愁，黯黯生天际。\n草色烟光残照里，无言谁会凭阑意。\n拟把疏狂图一醉，对酒当歌，强乐还无味。\n衣带渐宽终不悔，为伊消得人憔悴。"
         headerView.data = model
         view.addSubview(headerView)
         headerView.setTop(20+BBSNavigationBarHeight)
         headerView.setLeft(0)
         headerView.setWidth(BBSScreenWidth)
         
+        view.addSubview(commentBtn)
+        commentBtn.snp.makeConstraints { (make) in
+            make.left.right.bottom.equalTo(view)
+            make.height.equalTo(BBSTabbarHeight)
+        }
+        
         collectionView.alwaysBounceVertical = true
-        collectionView.backgroundColor = .clear
+        collectionView.backgroundColor = .white
         collectionView.delaysContentTouches = false
         collectionView.scrollsToTop = true
         
@@ -65,8 +81,8 @@ class MessageDetailViewController: UIViewController, UIScrollViewDelegate, UICol
         view.addSubview(collectionView)
         collectionView.snp.makeConstraints { (make) in
             make.top.equalTo(headerView.snp.bottom)
-            make.left.right.bottom.equalTo(view)
-            
+            make.left.right.equalTo(view)
+            make.bottom.equalTo(commentBtn.snp.top)
         }
     }
     
@@ -80,6 +96,27 @@ class MessageDetailViewController: UIViewController, UIScrollViewDelegate, UICol
         
     }
 
+    // MARK: Action
+    @objc fileprivate func clickCommentBtn() {
+        
+        LoginModuel.shared.showLoginContinue { (userInfo) in
+            let replyView = MessageReplyView()
+            replyView.show()
+            replyView.replySuccesClosure = { (message) in
+                let commentData = CommentModel()
+                commentData.userID = userInfo.userID
+                commentData.userAvatarUrl = userInfo.userAvatarUrl
+                commentData.userName = userInfo.userName
+                
+                commentData.commentPostTime = String.getCurrentTimeString()
+                commentData.comment = message
+                self.model.comments.append(commentData)
+                self.collectionView.reloadData()
+            }
+        }
+        
+        
+    }
     
     // MARK: UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

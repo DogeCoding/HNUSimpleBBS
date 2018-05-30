@@ -21,4 +21,11 @@ extension String {
         let rect = NSString(string: self).boundingRect(with: CGSize(width: width, height: CGFloat(MAXFLOAT)), options: .usesLineFragmentOrigin, attributes: [.font : font], context: nil)
         return ceil(rect.height) > maxHeight ? maxHeight : ceil(rect.height)
     }
+    
+    static func getCurrentTimeString() -> String {
+        let now = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        return formatter.string(from: now)
+    }
 }

@@ -36,6 +36,8 @@ class MessageDetailHeaderView: UIScrollView {
         let userAvatar = UIImageView(image: UIImage(named: "icon_avatarImg"))
         userAvatar.layer.cornerRadius = avatarImgHeight/2
         userAvatar.layer.masksToBounds = true
+        userAvatar.contentScaleFactor = BBSScreenScale
+        userAvatar.contentMode = .scaleAspectFill
         return userAvatar
     }()
     
@@ -96,6 +98,12 @@ class MessageDetailHeaderView: UIScrollView {
             make.height.equalTo(14)
             make.right.equalTo(self)
         }
+//        addSubview(commentBtn)
+//        commentBtn.snp.makeConstraints { (make) in
+//            make.centerY.equalTo(userAvatar)
+//            make.width.height.equalTo(avatarImgHeight/2)
+//            make.right.equalTo(self).offset(-kComponentPadding)
+//        }
         addSubview(message)
         message.snp.makeConstraints { (make) in
             make.top.equalTo(userAvatar.snp.bottom).offset(kComponentPadding)
@@ -106,7 +114,7 @@ class MessageDetailHeaderView: UIScrollView {
         lineView.backgroundColor = UIColorFromRGB(0x333333)
         addSubview(lineView)
         lineView.snp.makeConstraints { (make) in
-            make.bottom.equalTo(self)
+            make.top.equalTo(message.snp.bottom).offset(kComponentPadding-1/BBSScreenScale)
             make.left.equalTo(self)
             make.width.equalTo(BBSScreenWidth)
             make.height.equalTo(1/BBSScreenScale)
