@@ -24,8 +24,14 @@ extension String {
     
     static func getCurrentTimeString() -> String {
         let now = Date()
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        return formatter.string(from: now)
+        return String.getTimeString(withTimeInterval: Int(now.timeIntervalSince1970))
+    }
+    
+    static func getTimeString(withTimeInterval timeInterval: Int) -> String {
+        let time = TimeInterval(timeInterval)
+        let date = Date(timeIntervalSince1970: time)
+        let dformatter = DateFormatter()
+        dformatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        return dformatter.string(from: date)
     }
 }

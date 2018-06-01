@@ -53,7 +53,6 @@ class MessageDetailViewController: UIViewController, UIScrollViewDelegate, UICol
             return label
         }()
 
-        model.message = "蝶恋花\n伫倚危楼风细细，望极春愁，黯黯生天际。\n草色烟光残照里，无言谁会凭阑意。\n拟把疏狂图一醉，对酒当歌，强乐还无味。\n衣带渐宽终不悔，为伊消得人憔悴。"
         headerView.data = model
         view.addSubview(headerView)
         headerView.setTop(20+BBSNavigationBarHeight)
@@ -105,6 +104,8 @@ class MessageDetailViewController: UIViewController, UIScrollViewDelegate, UICol
             replyView.replySuccesClosure = { (message) in
                 let commentData = CommentModel()
                 commentData.userID = userInfo.userID
+                commentData.isUserLocalImage = userInfo.isUserLocalImage
+                commentData.localImage = userInfo.localImage
                 commentData.userAvatarUrl = userInfo.userAvatarUrl
                 commentData.userName = userInfo.userName
                 

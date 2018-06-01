@@ -17,13 +17,13 @@ class BaseModel: NSObject, ListDiffable {
     
     var userAvatarUrl: String
     
-    let defaultAvatarImg: String
+    var defaultAvatarImg: String
     
     override init() {
-        userID = DeviceUUID
-        userName = defaultUserName
-        userAvatarUrl = defaultAvatarUrls[defaultAvatarRandom()]
-        defaultAvatarImg = defaultAvatarImgPath
+        userID = ""
+        userName = ""
+        userAvatarUrl = ""
+        defaultAvatarImg = ""
     }
     
     // MARK: UI Data

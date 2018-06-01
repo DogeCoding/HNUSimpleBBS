@@ -15,7 +15,11 @@ class MessageDetailHeaderView: UIScrollView {
     var data: UserModel {
         didSet {
             title.text = data.title
-            userAvatar.kf.setImage(with: URL(string: data.userAvatarUrl))
+            if data.isUserLocalImage, let image = data.localImage {
+                userAvatar.image = image
+            } else {
+                userAvatar.kf.setImage(with: URL(string: data.userAvatarUrl))
+            }
             userName.text = data.userName
             timeSincePostLabel.text = data.timeSincePost
             message.text = data.message
@@ -132,6 +136,7 @@ class MessageDetailHeaderView: UIScrollView {
         let messageHeight = ceil(message.sizeThatFits(CGSize(width: BBSScreenWidth - kComponentPadding*2, height: CGFloat(MAXFLOAT))).height)
         let titleHeight = ceil(title.sizeThatFits(CGSize(width: BBSScreenWidth - kComponentPadding*2, height: CGFloat(MAXFLOAT))).height)
         setHeight(kComponentPadding*4+avatarImgHeight+titleHeight+messageHeight)
+        contentSize = CGSize(width: BBSScreenWidth, height: kComponentPadding*4+avatarImgHeight+titleHeight+messageHeight)
         title.setHeight(titleHeight)
         message.snp.remakeConstraints { (make) in
             make.top.equalTo(userAvatar.snp.bottom).offset(kComponentPadding)

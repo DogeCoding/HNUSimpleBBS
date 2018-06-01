@@ -16,10 +16,27 @@ class UserModel: BaseModel {
     
     var comments: [CommentModel]
     
+    var isUserLocalImage: Bool = false
+    
+    var localImage: UIImage? = nil
+    
     override init() {
-        message = "There are no new messages."
-        timeSincePost = "2018-1-1"
-        title = "今晚有一起去综合楼自习的吗"
+        message = ""
+        timeSincePost = ""
+        title = ""
         comments = []
+    }
+    
+    init(withBaseModel model: BaseModel) {
+        message = ""
+        timeSincePost = ""
+        title = ""
+        comments = []
+        super.init()
+        userID = model.userID
+        userName = model.userName
+        userAvatarUrl = model.userAvatarUrl
+        defaultAvatarImg = model.defaultAvatarImg
+        
     }
 }

@@ -10,8 +10,6 @@ fileprivate let kComponentPadding: CGFloat = 10
 
 class PublishMessageViewController: UIViewController, UITextViewDelegate {
     
-    var model: UserModel = UserModel()
-    
     fileprivate var titleTextView: UITextView = {
         let view = UITextView()
         view.font = UIFont.systemFont(ofSize: 15)
@@ -123,6 +121,8 @@ class PublishMessageViewController: UIViewController, UITextViewDelegate {
         let messageModel = UserModel()
         let userInfo = LoginModuel.shared.userInfo
         messageModel.userID = userInfo.userID
+        messageModel.isUserLocalImage = userInfo.isUserLocalImage
+        messageModel.localImage = userInfo.localImage
         messageModel.userAvatarUrl = userInfo.userAvatarUrl
         messageModel.userName = userInfo.userName
         messageModel.title = titleTextView.text

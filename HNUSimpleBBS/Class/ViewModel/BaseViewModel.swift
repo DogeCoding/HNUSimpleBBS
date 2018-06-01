@@ -46,14 +46,13 @@ class BaseViewModel: NSObject, ListDiffable {
 //        sleep(3)
         switch dataType {
         case .weibo:
-            for i in 0..<4 {
-                let model = WeiboModel()
-                model.userID = "\(i)"
+            for _ in 0..<4 {
+                let model = FakeModelCreator.weiboModelCreator()
                 datas.append(model)
             }
         case .user:
-            for _ in 0..<10 {
-                let model = UserModel()
+            for i in 0..<10 {
+                let model = FakeModelCreator.userModelCreator(withComments: i/2)
                 datas.append(model)
             }
         }

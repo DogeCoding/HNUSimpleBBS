@@ -38,6 +38,8 @@
 		21FC508520BE73BD002E40BC /* MessageReplyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FC508420BE73BD002E40BC /* MessageReplyView.swift */; };
 		21FC508720BE838B002E40BC /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FC508620BE838B002E40BC /* SettingViewController.swift */; };
 		21FC508920BEBA6F002E40BC /* BBSTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FC508820BEBA6E002E40BC /* BBSTextView.swift */; };
+		21FC508B20BFA108002E40BC /* FakeModelCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FC508A20BFA108002E40BC /* FakeModelCreator.swift */; };
+		21FC508D20BFEEE6002E40BC /* MineNameInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FC508C20BFEEE6002E40BC /* MineNameInputView.swift */; };
 		DD0DA29F20B12268009931D5 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0DA29E20B12268009931D5 /* FeedViewController.swift */; };
 		DD0DA2A120B13C5D009931D5 /* TailLoadingNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0DA2A020B13C5D009931D5 /* TailLoadingNode.swift */; };
 		DD0DA2A320B13C9A009931D5 /* WeiboCellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0DA2A220B13C9A009931D5 /* WeiboCellNode.swift */; };
@@ -158,6 +160,8 @@
 		21FC508420BE73BD002E40BC /* MessageReplyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageReplyView.swift; sourceTree = "<group>"; };
 		21FC508620BE838B002E40BC /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		21FC508820BEBA6E002E40BC /* BBSTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBSTextView.swift; sourceTree = "<group>"; };
+		21FC508A20BFA108002E40BC /* FakeModelCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeModelCreator.swift; sourceTree = "<group>"; };
+		21FC508C20BFEEE6002E40BC /* MineNameInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineNameInputView.swift; sourceTree = "<group>"; };
 		4246BF64B4F650EB68FDE5E9 /* libPods-HNUSimpleBBS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HNUSimpleBBS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DE42458D3AE3E27E7B256BC /* Pods-HNUSimpleBBS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HNUSimpleBBS.release.xcconfig"; path = "Pods/Target Support Files/Pods-HNUSimpleBBS/Pods-HNUSimpleBBS.release.xcconfig"; sourceTree = "<group>"; };
 		DD0DA29E20B12268009931D5 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
@@ -336,6 +340,7 @@
 				21FC508020BDA4AF002E40BC /* MessageCommentHeaderView.swift */,
 				21FC508420BE73BD002E40BC /* MessageReplyView.swift */,
 				21FC508820BEBA6E002E40BC /* BBSTextView.swift */,
+				21FC508C20BFEEE6002E40BC /* MineNameInputView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -484,6 +489,7 @@
 				DDA3D98D20AB0A1A008F5737 /* BBSCommon.swift */,
 				DDA3D99420AC3B3C008F5737 /* Then.swift */,
 				DD11307120B19582003C0DFA /* Network.swift */,
+				21FC508A20BFA108002E40BC /* FakeModelCreator.swift */,
 			);
 			name = Utility;
 			path = Ulity;
@@ -759,6 +765,7 @@
 				21F061AF20B3DD5600EFA1A1 /* MessageNormalCell.swift in Sources */,
 				DD1130A620B1A98C003C0DFA /* Nose.swift in Sources */,
 				DD11309D20B1A98C003C0DFA /* CritterView.swift in Sources */,
+				21FC508D20BFEEE6002E40BC /* MineNameInputView.swift in Sources */,
 				DD7A9F7620B02BA200ABE736 /* UIDevice+BBSHelper.swift in Sources */,
 				DD1130AC20B1A98C003C0DFA /* CATransform3D+Helper.swift in Sources */,
 				21F061AB20B3CE6900EFA1A1 /* CommentModel.swift in Sources */,
@@ -782,6 +789,7 @@
 				21F061B120B4F6B900EFA1A1 /* UINavigationController+BBSHelper.swift in Sources */,
 				DD1130A220B1A98C003C0DFA /* LeftEarMask.swift in Sources */,
 				DD7A9F7720B02BA200ABE736 /* UIScrollView+BBSMJRefresh.swift in Sources */,
+				21FC508B20BFA108002E40BC /* FakeModelCreator.swift in Sources */,
 				2142FAE720ACA3A300D76153 /* WeiboModel.swift in Sources */,
 				DD1130AD20B1A98C003C0DFA /* Degree.swift in Sources */,
 				DD11309B20B1A98C003C0DFA /* CritterAnimatable.swift in Sources */,

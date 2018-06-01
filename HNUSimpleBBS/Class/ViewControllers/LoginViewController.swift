@@ -23,11 +23,11 @@ private let textFieldWidth: CGFloat = 206
 
 final class LoginViewController: UIViewController, UITextFieldDelegate {
     
-    var loginSuccessClosure: ((_ userInfo: BaseModel) -> ())? = nil
+    var loginSuccessClosure: ((_ userInfo: UserModel) -> ())? = nil
     var loginFailClosure: (() -> ())? = nil
     fileprivate var account: String = ""
     fileprivate var password: String = ""
-    var userInfo: BaseModel = BaseModel()
+    var userInfo: UserModel = UserModel()
 
     private let critterView = CritterView(frame: critterViewFrame)
 

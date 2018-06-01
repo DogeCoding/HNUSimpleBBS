@@ -13,15 +13,28 @@ class WeiboModel: BaseModel {
 
     var totalNumbersOfImgs: NSInteger
     var imgUrls: [String]
-    let dafaultImgPath: String
+    var dafaultImgPath: String
     
     override init() {
-        message = "There are no new messages."
-        timeSincePost = "2018-1-1"
+        message = ""
+        timeSincePost = ""
         totalNumbersOfImgs = 3
-        imgUrls = [defaultImgUrls[defaultImgRandom()], defaultImgUrls[defaultImgRandom()], defaultImgUrls[defaultImgRandom()]]
+        imgUrls = []
         dafaultImgPath = defaultWeiboImgPath
         super.init()
+    }
+    
+    init(withBaseModel model: BaseModel) {
+        message = ""
+        timeSincePost = ""
+        totalNumbersOfImgs = 3
+        imgUrls = []
+        dafaultImgPath = defaultWeiboImgPath
+        super.init()
+        userID = model.userID
+        userName = model.userName
+        userAvatarUrl = model.userAvatarUrl
+        defaultAvatarImg = model.defaultAvatarImg
     }
     
     func messageAttributedString(withFontSize size: CGFloat) -> NSAttributedString {

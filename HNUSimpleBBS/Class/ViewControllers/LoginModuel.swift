@@ -9,8 +9,9 @@
 class LoginModuel: NSObject {
     var isLogin: Bool = false
     
-    var userInfo: BaseModel = {
-        let model = BaseModel()
+    var userInfo: UserModel = {
+        let model = UserModel()
+        model.userName = "codingdoge"
         model.userAvatarUrl = "http://oo8snaf4x.bkt.clouddn.com/WechatIMG10.jpeg"
         return model
     }()
@@ -23,7 +24,7 @@ class LoginModuel: NSObject {
         super.init()
     }
     
-    func showLoginContinue(_ isShowToast: Bool = true, _ closure: @escaping (_ userInfo: BaseModel) -> ()) {
+    func showLoginContinue(_ isShowToast: Bool = true, _ closure: @escaping (_ userInfo: UserModel) -> ()) {
         if !isLogin {
             if isShowToast {
                 iToast.makeText("小宝贝请先登录哦😯").show()

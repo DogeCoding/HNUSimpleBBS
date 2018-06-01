@@ -18,7 +18,11 @@ class MessageNormalCell: UICollectionViewCell {
     
     var data: UserModel {
         didSet {
-            avatarImg.kf.setImage(with: URL(string: data.userAvatarUrl))
+            if data.isUserLocalImage, let image = data.localImage {
+                avatarImg.image = image
+            } else {
+                avatarImg.kf.setImage(with: URL(string: data.userAvatarUrl))
+            }
             timeSincePostLabel.text = data.timeSincePost
             userNameLabel.text = data.userName
             titleLabel.text = data.title

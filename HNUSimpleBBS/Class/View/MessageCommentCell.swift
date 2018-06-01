@@ -20,7 +20,11 @@ class MessageCommentCell: UICollectionViewCell {
     
     var data: CommentModel {
         didSet {
-            avatarImg.kf.setImage(with: URL(string: data.userAvatarUrl))
+            if data.isUserLocalImage, let image = data.localImage {
+                avatarImg.image = image
+            } else {
+                avatarImg.kf.setImage(with: URL(string: data.userAvatarUrl))
+            }
             timeSincePostLabel.text = data.commentPostTime
             userNameLabel.text = data.userName
             commentText.text = data.comment
