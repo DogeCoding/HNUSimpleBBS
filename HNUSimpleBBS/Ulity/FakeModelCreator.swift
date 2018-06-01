@@ -25,7 +25,7 @@ class FakeModelCreator {
     
     fileprivate let names = [
         "结局更加忧伤",
-        "污力满满",
+        "污力满满",
         "不矜",
         "野性子#",
         "炙痛",
@@ -37,7 +37,9 @@ class FakeModelCreator {
         "一个人",
         "夜流逝",
         "never°",
-        "(_涙嘚痕jǐ灬"
+        "(_涙嘚痕jǐ灬",
+        "蛋蛋的忧伤",
+        "请叫我学霸"
     ]
     
     fileprivate let imgUrls = [

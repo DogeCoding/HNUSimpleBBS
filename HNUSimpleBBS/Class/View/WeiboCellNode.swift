@@ -58,10 +58,11 @@ class WeiboCellNode: ASCellNode, ASNetworkImageNodeDelegate {
             let imageNode = ASNetworkImageNode()
             imageNode.delegate = self
             imageNode.url = URL(string: url)
-            imageNode.isLayerBacked = true
+            imageNode.isLayerBacked = false
             imageNode.defaultImage = UIImage(named: model.dafaultImgPath)
             imageNode.placeholderEnabled = true
             imageNode.placeholderFadeDuration = 1
+            imageNode.addTarget(self, action: #selector(handleClickImgeNode(sender:)), forControlEvents: .touchUpInside)
             photoImageNodes.append(imageNode)
         }
         
@@ -164,5 +165,12 @@ class WeiboCellNode: ASCellNode, ASNetworkImageNodeDelegate {
     // MARK: Network Image Delegate
     func imageNode(_ imageNode: ASNetworkImageNode, didLoad image: UIImage) {
         setNeedsLayout()
+    }
+    
+    // MARK: Action
+    @objc fileprivate func handleClickImgeNode(sender: ASNetworkImageNode) {
+        let vc = FeedImageDetailViewController()
+        vc.imageDetail.image = sender.image
+        RootViewController.navigationController?.pushViewController(vc, animated: true)
     }
 }
