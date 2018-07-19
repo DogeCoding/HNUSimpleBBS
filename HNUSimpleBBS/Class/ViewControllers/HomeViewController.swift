@@ -5,7 +5,7 @@
 //  Created by CodingDoge on 2018/4/8.
 //  Copyright © 2018年 CodingDoge. All rights reserved.
 //
-
+//import 
 class HomeViewController: UIViewController, UIScrollViewDelegate {
     
     lazy fileprivate var segmentControl: BBSSegmentControl? = nil
@@ -24,6 +24,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         
         view.backgroundColor = UIColorFromRGB(0x43BDCF)
+       
         setupUI()
     }
     
@@ -56,6 +57,14 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
         segmentControl?.selectedIndex = lastSelectedSegmentIndex
         switchVC(vc: vcArray[lastSelectedSegmentIndex])
 //        RootViewController.navigationController?.pushViewController(vcArray[0], animated: false)
+        
+        let fpsLabel = FPSView.shared
+        view.addSubview(fpsLabel)
+        fpsLabel.snp.makeConstraints { (make) in
+            make.top.equalTo((segmentControl?.snp.bottom)!)
+            make.left.right.equalTo(view)
+            make.height.equalTo(50)
+        }
     }
     
     @objc fileprivate func segmentControl(action sender: BBSSegmentControl) {

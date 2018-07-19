@@ -1,0 +1,6 @@
+module Pods_HNUSimpleBBS {
+  umbrella header "Pods-HNUSimpleBBS-umbrella.h"
+
+  export *
+  module * { export * }
+}

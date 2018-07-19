@@ -8,6 +8,6 @@
 
 extension UIViewController {
     func isPrefersStatusBarHidden() -> Bool {
-        return false
+        return prefersStatusBarHidden
     }
 }

@@ -98,7 +98,7 @@ class BBSTabbar: UIView {
         
         // badgeView 8*8
         badgeView.snp.makeConstraints { (make) in
-            make.left.equalTo(messageBtn.width() / 2 + 8)
+            make.left.equalTo(messageBtn.width / 2 + 8)
             make.top.equalTo(6)
             make.width.height.equalTo(8)
         }

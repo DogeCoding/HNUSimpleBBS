@@ -6,6 +6,8 @@
 //  Copyright © 2018年 CodingDoge. All rights reserved.
 //
 
+import IQKeyboardManagerSwift
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -24,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        window?.backgroundColor = .white
 //        window?.makeKeyAndVisible()
 
-        
+        IQKeyboardManager.shared.enable = true
         
         return true
     }

@@ -6,4 +6,5 @@ pod 'MJRefresh', '~> 3.1.12'
 pod 'Texture/IGListKit'
 pod 'Texture/PINRemoteImage'
 pod 'pop', '~> 1.0'
+pod 'YYText'
 end

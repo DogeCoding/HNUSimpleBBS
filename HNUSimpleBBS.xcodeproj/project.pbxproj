@@ -12,6 +12,9 @@
 		21597CAE20B2FD11006A9844 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21597CAD20B2FD11006A9844 /* BaseModel.swift */; };
 		21597CB020B36044006A9844 /* UIApplication+BBSHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21597CAF20B36044006A9844 /* UIApplication+BBSHelper.swift */; };
 		21597CB220B37ADB006A9844 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21597CB120B37ADB006A9844 /* UserModel.swift */; };
+		21B30BE220C44BA000F982D7 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD7A9EEA20AD33A700ABE736 /* SnapKit.framework */; };
+		21B30BE320C44BA600F982D7 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D350BE2079B45400474072 /* Kingfisher.framework */; };
+		21B30BE420C44BAC00F982D7 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D350BC2079B45000474072 /* IQKeyboardManagerSwift.framework */; };
 		21D3508B2078FF3200474072 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D3508A2078FF3200474072 /* AppDelegate.swift */; };
 		21D350902078FF3200474072 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21D3508E2078FF3200474072 /* Main.storyboard */; };
 		21D350922078FF3200474072 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21D350912078FF3200474072 /* Assets.xcassets */; };
@@ -25,6 +28,7 @@
 		21D350D62079B7E600474072 /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D350D52079B7E600474072 /* MineViewController.swift */; };
 		21D350D82079B81000474072 /* HomeNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D350D72079B81000474072 /* HomeNewsCell.swift */; };
 		21D350DA2079BB4D00474072 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D350D92079BB4D00474072 /* BaseViewModel.swift */; };
+		21EEAE9820C84C3F0020D288 /* FPSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EEAE9720C84C3F0020D288 /* FPSView.swift */; };
 		21F061AB20B3CE6900EFA1A1 /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F061AA20B3CE6900EFA1A1 /* CommentModel.swift */; };
 		21F061AD20B3CF5900EFA1A1 /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F061AC20B3CF5900EFA1A1 /* MessageViewModel.swift */; };
 		21F061AF20B3DD5600EFA1A1 /* MessageNormalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F061AE20B3DD5600EFA1A1 /* MessageNormalCell.swift */; };
@@ -148,6 +152,7 @@
 		21D350D52079B7E600474072 /* MineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
 		21D350D72079B81000474072 /* HomeNewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNewsCell.swift; sourceTree = "<group>"; };
 		21D350D92079BB4D00474072 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		21EEAE9720C84C3F0020D288 /* FPSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPSView.swift; sourceTree = "<group>"; };
 		21F061AA20B3CE6900EFA1A1 /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
 		21F061AC20B3CF5900EFA1A1 /* MessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
 		21F061AE20B3DD5600EFA1A1 /* MessageNormalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageNormalCell.swift; sourceTree = "<group>"; };
@@ -235,7 +240,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21B30BE420C44BAC00F982D7 /* IQKeyboardManagerSwift.framework in Frameworks */,
 				F1523913E955FA98C540BA0E /* libPods-HNUSimpleBBS.a in Frameworks */,
+				21B30BE220C44BA000F982D7 /* SnapKit.framework in Frameworks */,
+				21B30BE320C44BA600F982D7 /* Kingfisher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +351,7 @@
 				21FC508420BE73BD002E40BC /* MessageReplyView.swift */,
 				21FC508820BEBA6E002E40BC /* BBSTextView.swift */,
 				21FC508C20BFEEE6002E40BC /* MineNameInputView.swift */,
+				21EEAE9720C84C3F0020D288 /* FPSView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -547,7 +556,6 @@
 				21D350832078FF3200474072 /* Sources */,
 				21D350842078FF3200474072 /* Frameworks */,
 				21D350852078FF3200474072 /* Resources */,
-				F7020CF873DD8E5F2A052995 /* [CP] Embed Pods Frameworks */,
 				C60C44E6BE1C21EE116A6C58 /* [CP] Copy Pods Resources */,
 				21D350DB207A605B00474072 /* ShellScript */,
 			);
@@ -728,21 +736,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HNUSimpleBBS/Pods-HNUSimpleBBS-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F7020CF873DD8E5F2A052995 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HNUSimpleBBS/Pods-HNUSimpleBBS-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -773,6 +766,7 @@
 				DD1130AC20B1A98C003C0DFA /* CATransform3D+Helper.swift in Sources */,
 				21F061AB20B3CE6900EFA1A1 /* CommentModel.swift in Sources */,
 				DD1130A120B1A98C003C0DFA /* LeftEar.swift in Sources */,
+				21EEAE9820C84C3F0020D288 /* FPSView.swift in Sources */,
 				DD6E726820B28AD60009AA9A /* iToast.swift in Sources */,
 				21D3508B2078FF3200474072 /* AppDelegate.swift in Sources */,
 				DD11309C20B1A98C003C0DFA /* CritterAssets.swift in Sources */,

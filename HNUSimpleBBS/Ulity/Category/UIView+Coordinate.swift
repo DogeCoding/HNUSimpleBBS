@@ -7,7 +7,7 @@
 //
 
 extension UIView {
-    func left() -> CGFloat {
+    var left: CGFloat {
         return frame.origin.x
     }
     
@@ -17,7 +17,7 @@ extension UIView {
         frame = tFrame
     }
     
-    func top() -> CGFloat {
+    var top: CGFloat {
         return frame.origin.y
     }
     
@@ -27,7 +27,7 @@ extension UIView {
         frame = tFrame
     }
     
-    func right() -> CGFloat {
+    var right: CGFloat {
         return frame.origin.x + frame.size.width;
     }
     
@@ -37,7 +37,7 @@ extension UIView {
         frame = tFrame
     }
     
-    func bottom() -> CGFloat {
+    var bottom: CGFloat {
         return frame.origin.y + frame.size.height
     }
     
@@ -47,7 +47,7 @@ extension UIView {
         frame = tFrame
     }
     
-    func centerX() -> CGFloat {
+    var centerX: CGFloat {
         return center.x
     }
     
@@ -55,7 +55,7 @@ extension UIView {
         center = CGPoint.init(x: centerX, y: center.y)
     }
     
-    func centerY() -> CGFloat {
+    var centerY: CGFloat {
         return center.y
     }
     
@@ -63,7 +63,7 @@ extension UIView {
         center = CGPoint.init(x: center.x, y: centerY)
     }
     
-    func width() -> CGFloat {
+    var width: CGFloat {
         return frame.size.width
     }
     
@@ -73,7 +73,7 @@ extension UIView {
         frame = tFrame
     }
     
-    func height() -> CGFloat {
+    var height: CGFloat {
         return frame.size.height
     }
     
@@ -88,7 +88,7 @@ extension UIView {
 //
 //    }
     
-    func origin() -> CGPoint {
+    var origin: CGPoint {
         return frame.origin
     }
     
@@ -98,7 +98,7 @@ extension UIView {
         frame = tFrame
     }
     
-    func size() -> CGSize {
+    var size: CGSize {
         return frame.size
     }
     

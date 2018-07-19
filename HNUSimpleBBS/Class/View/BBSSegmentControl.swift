@@ -34,11 +34,11 @@ class BBSSegmentControl: UIControl {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        var offsetX = (width()-totleWidth)/2
+        var offsetX = (width-totleWidth)/2
         for i in 0..<subviews.count {
             if let v = viewWithTag(kBBSSegmentControlTitleTagBase + i) {
                 v.setLeft(offsetX)
-                offsetX = v.right()
+                offsetX = v.right
             }
         }
     }
@@ -85,7 +85,7 @@ class BBSSegmentControl: UIControl {
             label.backgroundColor = .clear
             label.alpha = 0.6
             addSubview(label)
-            totleWidth += label.width()
+            totleWidth += label.width
             index += 1
         }
         if selectedIndex == -1 {

@@ -1,9 +1,9 @@
 PODS:
-  - IGListKit (3.0.0):
-    - IGListKit/Default (= 3.0.0)
-  - IGListKit/Default (3.0.0):
+  - IGListKit (3.4.0):
+    - IGListKit/Default (= 3.4.0)
+  - IGListKit/Default (3.4.0):
     - IGListKit/Diffing
-  - IGListKit/Diffing (3.0.0)
+  - IGListKit/Diffing (3.4.0)
   - MJRefresh (3.1.15.3)
   - PINCache (3.0.1-beta.6):
     - PINCache/Arc-exception-safe (= 3.0.1-beta.6)
@@ -21,30 +21,44 @@ PODS:
     - PINCache (= 3.0.1-beta.6)
     - PINRemoteImage/Core
   - pop (1.0.10)
-  - Texture/Core (2.6)
-  - Texture/IGListKit (2.6):
-    - IGListKit (= 3.0.0)
+  - Texture/Core (2.7)
+  - Texture/IGListKit (2.7):
+    - IGListKit (~> 3.0)
     - Texture/Core
-  - Texture/PINRemoteImage (2.6):
+  - Texture/PINRemoteImage (2.7):
     - PINRemoteImage/iOS (= 3.0.0-beta.13)
     - PINRemoteImage/PINCache
     - Texture/Core
+  - YYText (1.0.7)
 
 DEPENDENCIES:
   - MJRefresh (~> 3.1.12)
   - pop (~> 1.0)
   - Texture/IGListKit
   - Texture/PINRemoteImage
+  - YYText
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - IGListKit
+    - MJRefresh
+    - PINCache
+    - PINOperation
+    - PINRemoteImage
+    - pop
+    - Texture
+    - YYText
 
 SPEC CHECKSUMS:
-  IGListKit: 9eab6856a15fa25ad72018ff9d9eb2178c240fff
+  IGListKit: 7a5d788e9fb746bcd402baa8e8b24bc3bd2a5a07
   MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
   PINCache: d195fdba255283f7e9900a55e3cced377f431f9b
   PINOperation: a6219e6fc9db9c269eb7a7b871ac193bcf400aac
   PINRemoteImage: d6d51c5d2adda55f1ce30c96e850b6c4ebd2856a
   pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
-  Texture: 7249074582daf75e524e59df5428b66b8e8db0e4
+  Texture: 9d7e38965cf22ccd7cd9c249dd78b3f14e70ab6c
+  YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 91730dde936493935210f62408941a2e2fdde55f
+PODFILE CHECKSUM: 1079f8d3ee471509e90adfbcd18b261a2e4dd4fa
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3

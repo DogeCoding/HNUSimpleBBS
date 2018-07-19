@@ -111,7 +111,7 @@ class MineViewController: UIViewController, UINavigationControllerDelegate, UIIm
     }
     
     @objc fileprivate func handleAvatarTap() {
-        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "从手机相册选择", style: .default, handler: { (action) in
             let imagePicker = UIImagePickerController()
             imagePicker.sourceType = .photoLibrary

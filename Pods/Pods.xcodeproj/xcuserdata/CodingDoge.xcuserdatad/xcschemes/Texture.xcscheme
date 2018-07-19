@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '91798C481749783C1B18F28221BB51B4'
-               BlueprintName = 'Texture'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libTexture.a'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "BA1130AA6DD1107900497008F992F16E"
+               BlueprintName = "Texture"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "libTexture.a">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

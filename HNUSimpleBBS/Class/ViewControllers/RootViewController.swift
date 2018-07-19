@@ -27,6 +27,7 @@ class BBSRootViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .clear
         
+        
         tab = tab.plaveAt(viewController: self)
         handleClickHome()
         tab.homeBtn.addTarget(self, action: #selector(handleClickHome), for: .touchUpInside)
